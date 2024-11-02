@@ -1,0 +1,62 @@
+.service-section {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+
+  .title{
+    font-size: 45px;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .service-button {
+    background-color: #fcd34d;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+  }
+  
+  
+  .service-button:hover {
+    background-color: #fbbf24;
+  }
+
+  .services{
+    height: 85vh;
+  }
+  
+  @media (min-width: 768px) {
+    .service-section {
+      height: 400px;
+    }
+
+  }
+  
+  @media (min-width: 1280px) {
+    .service-section {
+      height: 500px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title{
+        font-size: 30px !important;
+    }
+    .services{
+        height: 115vh !important;
+    }
+  }
+  

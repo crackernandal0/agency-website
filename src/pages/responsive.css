@@ -1,0 +1,20 @@
+.electro-group{
+  position: absolute;
+  width: 42.81%;
+  height: 73.47%;
+  top: 0%;
+  left: 57.19%;
+  background: url(http://localhost:3000/static/media/40112de2-26a5-45b9-a36c-1861ba3d2d4c.15e8544….png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 451;
+
+}
+
+@media (max-width:768px){
+.home-text{
+  margin-top: 0;
+}
+.elctro-text-1{
+  font-size:2rem !important ;
+}
+}
