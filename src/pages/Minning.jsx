@@ -1,1041 +1,1139 @@
-import React from 'react';
-import './minning.css';
+import React, { useEffect, useState } from "react";
+import "./minning.css";
+import Slider from 'react-slick';
+import group from '../assets/images/Group 145.png'
+// import group2 from '../assets/images/Group 146.png'
+import { FaInstagram } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
+import logo from '../assets/images/logo (2).png'
+
+import background from '../assets/images/minning.png'
+// import vector from '../assets/images/Vector47.png'
+
+import open1 from '../assets/images/open1.png'
+import open2 from '../assets/images/open2.png'
+import open3 from '../assets/images/open3.png'
+import open4 from '../assets/images/open4.png'
+import open5 from '../assets/images/open5.png'
+import open6 from '../assets/images/open6.png'
+import open7 from '../assets/images/open7.png'
+import open8 from '../assets/images/open8.png'
+import open9 from '../assets/images/open9.png'
+import open10 from '../assets/images/open10.png'
+import open11 from '../assets/images/open11.png'
+import optimization1 from '../assets/images/optimization1.png'
+import optimization2 from '../assets/images/optimization2.png'
+import optimization3 from '../assets/images/optimization3.png'
+import optimization4 from '../assets/images/optimization4.png'
+import optimization5 from '../assets/images/optimization5.png'
+import optimization6 from '../assets/images/optimization6.png'
+import optimization7 from '../assets/images/optimization7.png'
+
+import mine1 from '../assets/images/mine1.png'
+import mine2 from '../assets/images/mine2.png'
+import mine3 from '../assets/images/mine3.png'
+import mine4 from '../assets/images/mine4.png'
+import mine5 from '../assets/images/mine5.png'
+import mine6 from '../assets/images/mine6.png'
+import mine7 from '../assets/images/mine7.png'
+import mine8 from '../assets/images/mine8.png'
+import mine9 from '../assets/images/mine9.png'
+import mine10 from '../assets/images/mine10.png'
+import mine11 from '../assets/images/mine11.png'
+import mine12 from '../assets/images/mine12.png'
+import mine13 from '../assets/images/mine13.png'
+import mine14 from '../assets/images/mine14.png'
+
+import method1 from '../assets/images/method1.png'
+import method2 from '../assets/images/method2.png'
+import method3 from '../assets/images/method3.png'
+
+import project1 from '../assets/images/project1.png'
+import project2 from '../assets/images/project2.png'
+import project3 from '../assets/images/project3.png'
+import project4 from '../assets/images/project4.png'
+import project5 from '../assets/images/project5.png'
+import project6 from '../assets/images/project6.png'
+
+import modal1 from '../assets/images/modal1.png'
+import modal2 from '../assets/images/modal2.png'
+import modal3 from '../assets/images/modal3.png'
+import modal4 from '../assets/images/modal4.png'
+import modal5 from '../assets/images/modal5.png'
+import modal6 from '../assets/images/modal6.png'
+import modal7 from '../assets/images/modal7.png'
+import modal8 from '../assets/images/modal8.png'
+import modal9 from '../assets/images/modal9.png'
+
+import minning1 from '../assets/images/minnings1.png'
+import minning2 from '../assets/images/minnings2.png'
+import minning3 from '../assets/images/minnings3.png'
+import minning4 from '../assets/images/minnings4.png'
+import minning5 from '../assets/images/minnings5.png'
+import minning6 from '../assets/images/minnings6.png'
+import minning7 from '../assets/images/minnings7.png'
+import minning8 from '../assets/images/minnings8.png'
+import minning9 from '../assets/images/minnings9.png'
 
 export default function Main() {
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 760);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // const expertiseData = [
+  //   'Strategic Mining Planning',
+  //   'Mining Methods Optimization',
+  //   'Quantitative and Qualitative Risk Analysis',
+  //   'Specialized report: \n• Jorc \n• S-K1300 \n• NI 43-101',
+  //   'Project Evaluation (Support in Geology - Geometallurgy and Mining)',
+  //   'Mineral Resource and Reserve Estimation',
+  //   'Software support and implementation',
+  //   'Conceptual, Prefeasibility and Feasibility Studies, Due Diligence and Audits',
+  //   'Mining GIS Modeling and Geomatics',
+  // ];
+
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1, // Show one main slide at a time
+    centerMode: true, // Center the slide
+    centerPadding: '0', // Adjust padding to show partial slides on both sides
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '25%', // Show partial slides on mobile
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '20%', // Narrower padding for smaller screens
+        },
+      },
+    ],
+  };
+  
+    const cards = [
+      {
+        imageUrl: open1,
+        title: 'Strategic planning and growth',
+        description: 'Strategic planning and growth path to capture economic value.',
+      },
+      {
+        imageUrl: open2,
+        title: 'Open pit mine phases designs',
+        description: 'Open pit mine phases designs at different levels of accuracy.',
+      },
+      {
+        imageUrl: open3,
+        title: 'Haulage and access systems',
+        description: 'Design and comparison of haulage and access systems in subway mines.',
+      },
+      {
+        imageUrl: open4,
+        title: 'Mining sequence planning',
+        description: 'Mining sequence and long and short-term production planning.',
+      },
+      {
+        imageUrl: open5,
+        title: 'Estimate of mining equipment fleet',
+        description: 'Estimate of mining equipment fleet, CAPEX and OPEX.',
+      },
+      {
+        imageUrl: open6,
+        title: 'Mineral Reserves estimation',
+        description: 'Estimation and certification of Mineral Reserves (GPI).',
+      },
+      {
+        imageUrl: open7,
+        title: 'Business planning support',
+        description: 'Business planning and management support systems.',
+      },
+      {
+        imageUrl: open8,
+        title: 'Graphic tool for planning',
+        description: 'Creation of graphic tool for integrated planning and decision making.',
+      },
+      {
+        imageUrl: open9,
+        title: 'Mina Planning Parameters',
+        description: 'Analysis of inputs and Mina Planning Parameters.',
+      },
+      {
+        imageUrl: open10,
+        title: 'CAD and 3D systems',
+        description: 'CAD and 3D systems for support analysis and mining planning.',
+      },
+      {
+        imageUrl: open11,
+        title: 'Data processing',
+        description: 'Data processing: "Data Exploratory Technique".',
+      },
+    ];
+
+    const cardss = [
+      {
+        imageUrl: optimization1,
+        title: 'Integrated Mine - Plant and Mine Dump Capacity Optimization',
+        description: 'Mining sequence and strategic filling of dump(s).',
+      },
+      {
+        imageUrl: optimization2,
+        title: 'Congestion and Operational Risk Analysis',
+        description: 'Traffic Optimization at Ramps and Accesses.',
+      },
+      {
+        imageUrl: optimization3,
+        title: 'Diagnosis of the Current Mining Optimization and Operational System',
+        description: 'Evaluation of existing processes to enhance efficiency.',
+      },
+      {
+        imageUrl: optimization4,
+        title: 'Generation and Execution of Ideas to Improve the Current Process',
+        description: 'Innovative strategies for process improvement.',
+      },
+      {
+        imageUrl: optimization5,
+        title: 'Consulting and Modeling for Mining Simulation',
+        description: 'Loading System, Haulers, Maintenance of Roads / Auxiliary Equipment.',
+      },
+      {
+        imageUrl: optimization6,
+        title: 'Strategic Mining Plans and Cut-Off Grade Optimization',
+        description: 'Optimization for the Quest for Mining Asset Value.',
+      },
+      {
+        imageUrl: optimization7,
+        title: 'Material Haulage Systems',
+        description: 'Automation studies (PLC), optimizing haulage belts, and slope stability assistance.',
+      },
+    ];
+  
+    const solution = [
+      {
+        imageUrl: mine1,
+        title: 'Selection of Mining Method',
+        description: 'Choosing mining method based on orebody and economic viability.',
+      },
+      {
+        imageUrl: mine2,
+        title: 'Knowledge and Benchmarking',
+        description: 'Strategic room and pillar mining for resource optimization.',
+      },
+      {
+        imageUrl: mine3,
+        title: 'Analysis and Optimization',
+        description: 'Optimizing mining operations for safety and efficiency.',
+      },
+      {
+        imageUrl: mine4,
+        title: 'Underground Mining Plan',
+        description: 'Developing mining plan with safety measures and resources.',
+      },
+      {
+        imageUrl: mine5,
+        title: 'Material Handling',
+        description: 'Efficient transportation of materials within the mine.',
+      },
+      {
+        imageUrl: mine6,
+        title: 'Auxiliary Operations',
+        description: 'Support operations for underground mining.',
+      },
+      {
+        imageUrl: mine7,
+        title: 'Estimation of Mineral Resources',
+        description: 'Resource estimation for planning and execution.',
+      },
+      {
+        imageUrl: mine8,
+        title: 'Underground Mining Plan',
+        description: 'Detailed planning of underground mining processes.',
+      },
+      {
+        imageUrl: mine9,
+        title: 'Planning Parameters',
+        description: 'Key parameters for effective underground mining.',
+      },
+      {
+        imageUrl: mine10,
+        title: 'Methods of Underground Mining',
+        description: 'Choosing suitable mining methods for the underground setup.',
+      },
+      {
+        imageUrl: mine11,
+        title: 'Cut-Off Grade - Dilution',
+        description: 'Setting grade thresholds for economic mining.',
+      },
+      {
+        imageUrl: mine12,
+        title: 'Mining Recovery',
+        description: 'Maximizing recovery rates from mining operations.',
+      },
+      {
+        imageUrl: mine13,
+        title: 'Production Programming and Execution',
+        description: 'Programming and execution of mining tasks.',
+      },
+      {
+        imageUrl: mine14,
+        title: 'Design and Comparison',
+        description: 'Comparing various mining methods for efficiency.',
+      },
+    ];
+
+    const minning = [
+      {
+        title: "Sub Level Stoping",
+        description: [
+          "Design Criteria",
+          "Selection of Stope",
+          "Ore Extraction",
+          "Backfill",
+          "Drill and Blast Design",
+          "Production Capacity",
+          "Ore Handling Design",
+          "Engineering Design"
+        ],
+        imageUrl: method1
+      },
+      {
+        title: "Sub Level Caving",
+        description: [
+          "Design Criteria",
+          "Selection of Blocked Orebody",
+          "Development & Drilling",
+          "Drill and Blast Design",
+          "Loading and Haulage",
+          "Production Capacity",
+          "Ore Handling Design",
+          "Engineering Design"
+        ],
+        imageUrl: method2
+      },
+      {
+        title: "Block Caving",
+        description: [
+          "Design Criteria",
+          "Selection of Blocked Orebody",
+          "Column Caving Layout",
+          "Gravity Flow of Ore",
+          "Draw Point Spacing",
+          "Production Capacity",
+          "Material Handling Design",
+          "Engineering Design"
+        ],
+        imageUrl: method3
+      }
+    ];
+    const proto = [
+      {
+        imageUrl: project1,
+        title: 'Project Evaluation: PEA - Conceptual, Pre-Feasibility and Feasibility'
+      },
+      {
+        imageUrl: project2,
+        title: 'Characterization of the ore body from a value standpoint'
+      },
+      {
+        imageUrl: project3,
+        title: 'Estimation of mineral resources and reserves'
+      },
+      {
+        imageUrl: project4,
+        title: 'Technical reports - Open pit and underground mining QPs'
+      },
+      {
+        imageUrl: project5,
+        title: 'Technical management and research consulting'
+      },
+      {
+        imageUrl: project6,
+        title: 'Engineering and resource management services'
+      }
+    ];
+
+    const geologicalCards = [
+      {
+        imageUrl: modal1,
+        title: 'Integration of topographic information to the national network.',
+      },
+      {
+        imageUrl: modal2,
+        title: 'Information unification and advanced database management.',
+      },
+      {
+        imageUrl: modal3,
+        title: 'Review of QA/QC procedures, Gathering of Findings and Opportunities.',
+      },
+      {
+        imageUrl: modal4,
+        title: 'Exploratory Analysis of Uni and Multivariable Information. Data Science for Big Data Jobs.',
+      },
+      {
+        imageUrl: modal5,
+        title: 'Structural geological modeling and different types of domains. Geo Metallurgical models focused on recovery calculations: R. Mass - Modifying factors.',
+      },
+      {
+        imageUrl: modal6,
+        title: 'Calculation of the Cut Off and/or NSR. Machine learning analysis for geology. Geo-metallurgy and geostatistical considerations.',
+      },
+      {
+        imageUrl: modal7,
+        title: 'Development of Jorc-type documents: NI-43101, SKR500 among others. Preparation and development of chapters in this area for Project level or LOM.',
+      },
+      {
+        imageUrl: modal8,
+        title: 'Estimation of Resources and Reserves using Geostatistical techniques such as others such as KOR.',
+      },
+      {
+        imageUrl: modal9,
+        title: 'Declaration of Resources and Reserves by Audits and Expert Reviews focused on the Review of Resources and Reserves by Specialty GPs.',
+      },
+    ];
+    
+    const sections = [
+      {
+        title: 'Technical Studies',
+        points: [
+          'Geology and exploration',
+          'Mineral Resources',
+          'Geometallurgy',
+          'Technical Report NI 43-101 / JORC',
+          'Mining Geology',
+        ],
+        description:
+          'Studies with an integral vision to identify findings and opportunities in early stages, according to the reality of each Project or Mine.',
+      },
+      {
+        title: 'Reviews and Audit',
+        points: ['High Level Review', 'Audits', 'Due Diligence'],
+        description:
+          'For reasons of certainty requirements and rigorous controls by investors, the procedures for estimating, classifying, and declaring Mining Resources are increasingly demanding. Therefore, having reviews at a high level or audits on these is crucial to ensure the results currently being carried out reflect this reality.',
+      },
+      {
+        title: 'Academic Support and Workshops',
+        points: [
+          'QA - QC',
+          'Applied Geometallurgy',
+          'Geostatistics',
+          'Fundamentals for Mineral Resources',
+        ],
+        description:
+          'Workshops aimed at companies or universities in order to contribute to the reduction of the gap between reality and the expected project level. With a multidisciplinary team focused on mining and consulting companies.',
+      },
+    ];
+  
+  const lastcards = [
+    {
+      imageUrl: minning1,
+      title: 'Integration of topographic information into the national network',
+      description: 'Integration of topographic information into the national network.'
+    },
+    {
+      imageUrl: minning2,
+      title: 'Unification of graphic information in a database',
+      description: 'Unification of graphic information in a database.'
+    },
+    {
+      imageUrl: minning3,
+      title: 'Graphic systems for property security evaluation',
+      description: 'Graphic systems for property security evaluation.'
+    },
+    {
+      imageUrl: minning4,
+      title: 'Graphic systems for emergency response',
+      description: 'Graphic systems for emergency response.'
+    },
+    {
+      imageUrl: minning5,
+      title: 'Characterization of surface land integrating parameters',
+      description: 'Characterization of surface land integrating geological, hydrogeological, and other parameters.'
+    },
+    {
+      imageUrl: minning6,
+      title: 'Updating in systems and use of coordinates and datums',
+      description: 'Updating in systems and use of coordinates and datums (Training included).'
+    },
+    {
+      imageUrl: minning7,
+      title: 'Web plans',
+      description: 'Web plans for infrastructure management.'
+    },
+    {
+      imageUrl: minning8,
+      title: 'Application of satellite images',
+      description: 'Application of satellite images for geological analysis.'
+    },
+    {
+      imageUrl: minning9,
+      title: 'Upgrades in new technologies for data acquisition',
+      description: 'Upgrades in new technologies for data acquisition and use.'
+    }
+  ];
+  
+
+
   return (
-    <div  id="mining-section" className='main-container'>
-      <div className='mask-group' />
-      <div className='uhd-fps' />
-      <div className='group-9' />
-      <span className='mining-a'>Mining</span>
-      <span className='driving-growth-innovation'>
-        Driving growth through innovation, efficiency, and responsible mining
-        practices.
-      </span>
-      <div className='flex-row-c'>
-        <span className='home-services-mining'>Home > Services > Mining</span>
-        <div className='group-b' />
-        <span className='expertise-geology-geometallurgy'>
-          Expertise ins geology, geometallurgy, geothecnics and mining
-        </span>
+   <>
+ <main className="relative bg-cover bg-center "  style={{ backgroundImage: `url(${background})` ,    opacity: '0.9' , height:'125vh'}}>
+    <img className='electro-image' style={{position:'absolute', right:'0'}} src={group} alt="" />
+    <img className='electro-image-1' style={{position:'absolute', left:'0', bottom:'0'}} src={group} alt="" />
+      <div  className="absolute inset-0 bg-black opacity-50"></div>
+      <div style={{position :'absolute', bottom:'40px'}} className="relative electro-heading z-10 text-white p-4 md:p-8 lg:p-8 text-left">
+        <h1 style={{fontSize:'35px'}} className="it-title font-bold">Mining</h1>
+        <p style={{fontSize:'48px'}} className="mt-4 italic it-des align-left">
+        Driving growth through innovation, efficiency, <br /> and responsible mining practices.
+        </p>
+       
       </div>
-      <div className='frame-c'>
-        <div className='frame-d'>
-          <div className='frame-e'>
-            <span className='strategic-mining-planing'>
-              Strategic Mining Planing
-            </span>
-          </div>
-        </div>
-        <div className='frame-f'>
-          <div className='frame-10'>
-            <span className='mining-methods-optimization'>
-              Mining Methods Optimization
-            </span>
-          </div>
-        </div>
-        <div className='frame-11'>
-          <div className='frame-12'>
-            <span className='risk-analysis'>
-              Quantitative and Qualitative Risk Analysis
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className='frame-13'>
-        <div className='frame-14'>
-          <div className='frame-15'>
-            <div className='specialized-report'>
-              <span className='specialized-report-16'>
-                Specialized report:
-                <br />
-              </span>
-              <span className='jorc-sk-ni'>
-                Jorc
-                <br />
-                SK1300
-                <br />
-                NI 43-101
-              </span>
+    </main>
+   
+    {isSmallScreen ? (
+        <div>
+          <div class="container-mining">
+            <div className="first row-cards">
+              <div class="mining-card">
+                <span>Strategic Mining Planning</span>
+              </div>
+              <div class="mining-card">
+                <span>Methods Optimization</span>
+              </div>
+            </div>
+            <div className="second row-cards">
+              <div class="mining-card">
+                <span>Quantitative and Qualitative Risk Analysis</span>
+              </div>
+              <div class="mining-card">
+                <span>
+                  Specialized report:
+                  <br />
+                  Jorc
+                  <br />
+                  SK1300
+                  <br />
+                  NI 43-101
+                </span>
+              </div>
+            </div>
+            <div className="first row-cards">
+              <div class="mining-card">
+                <span>
+                  Project Evaluation (Support in Geology - Geometallurgy and <br />
+                  Mining)
+                </span>
+              </div>
+              <div class="mining-card">
+                <span>Mineral Resource and Reserve Estimation</span>
+              </div>
+            </div>
+            <div className="second row-cards">
+              <div class="mining-card">
+                <span>Software support and implementation</span>
+              </div>
+              <div class="mining-card">
+                <span>
+                  Conceptual, Prefeasibility and Feasibility Studies, Due 
+                  Diligence and Audits
+                </span>
+              </div>
+            </div>
+            <div className="first row-cards">
+              <div class="mining-card">
+                <span>Mining GIS Modeling and Geomatics</span>
+              </div>
+              <div class="mining-card">
+                <span>Software support and implementation</span>
+              </div>
+            </div>
+            <div className="second row-cards">
+              <div class="mining-card">
+                <span>
+                  Conceptual, Prefeasibility and Feasibility Studies, Due
+                  Diligence and Audits
+                </span>
+              </div>
+              <div class="mining-card">
+                <span>Mining GIS Modeling and Geomatics</span>
+              </div>
             </div>
           </div>
         </div>
-        <div className='frame-17'>
-          <div className='frame-18'>
-            <span className='project-evaluation'>
-              Project Evaluation
-              <br />
-              (Support in Geology - Geometallurgy and Mining)
-            </span>
-          </div>
-        </div>
-        <div className='frame-19'>
-          <div className='frame-1a'>
-            <span className='resource-reserve-estimation'>
-              Mineral Resource and Reserve Estimation
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className='frame-1b'>
-        <div className='frame-1c'>
-          <div className='frame-1d'>
-            <span className='software-support-implementation'>
-              Software support and implementation
-            </span>
-          </div>
-        </div>
-        <div className='frame-1e'>
-          <div className='frame-1f'>
-            <span className='feasibility-studies'>
-              Conceptual, Prefeasibility and Feasibility Studies, Due Diligence
-              and Audits
-            </span>
-          </div>
-        </div>
-        <div className='frame-20'>
-          <div className='frame-21'>
-            <span className='mining-gis-modeling'>
-              Mining GIS Modeling and Geomatics
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className='flex-row-aad'>
-        <div className='group-22' />
-        <div className='frame-23'>
-          <span className='open-pit-mining-planning'>
-            Open Pit Mining Planning
-          </span>
-          <div className='frame-24'>
-            <div className='frame-25'>
-              <div className='frame-26'>
-                <div className='image' />
-                <div className='frame-27'>
-                  <span className='strategic-planning-growth'>
-                    Strategic planning and growth path to capture economic
-                    value.
-                  </span>
-                </div>
+      ) : (
+        <div>
+          <div className="frame-c">
+            <div className="frame-d">
+              <div className="frame-e">
+                <span className="strategic-mining-planing">
+                  Strategic Mining Planing
+                </span>
               </div>
-              <div className='frame-28'>
-                <div className='image-29' />
-                <div className='frame-2a'>
-                  <span className='open-pit-mine-designs'>
-                    Open pit mine phases designs at different levels of
-                    accuracy.
-                  </span>
-                </div>
+            </div>
+            <div className="frame-f">
+              <div className="frame-10">
+                <span className="mining-methods-optimization">
+                  Mining Methods Optimization
+                </span>
               </div>
-              <div className='frame-2b'>
-                <div className='image-2c' />
-                <div className='frame-2d'>
-                  <span className='haulage-access-systems'>
-                    Design and comparison of haulage and access systems in
-                    subway mines.
-                  </span>
-                </div>
+            </div>
+            <div className="frame-11">
+              <div className="frame-12">
+                <span className="risk-analysis">
+                  Quantitative and Qualitative Risk Analysis
+                </span>
               </div>
-              <div className='frame-2e'>
-                <div className='image-2f' />
-                <div className='frame-30'>
-                  <span className='mining-sequence-planning'>
-                    Mining sequence and long and short-term production planning.
+            </div>
+          </div>
+          <div className="frame-13">
+            <div className="frame-14">
+              <div className="frame-15">
+                <div className="specialized-report">
+                  <span className="specialized-report-16">
+                    Specialized report:
+                    <br />
+                  </span>
+                  <span className="jorc-sk-ni">
+                    Jorc
+                    <br />
+                    SK1300
+                    <br />
+                    NI 43-101
                   </span>
                 </div>
               </div>
             </div>
-          </div>
-          <div className='frame-31'>
-            <div className='frame-32'>
-              <div className='image-33' />
-              <div className='frame-34'>
-                <span className='estimate-mining-equipment'>
-                  Estimate of mining equipment fleet, CAPEX and OPEX.
+            <div className="frame-17">
+              <div className="frame-18">
+                <span className="project-evaluation">
+                  Project Evaluation
+                  <br />
+                  (Support in Geology - Geometallurgy and <br /> Mining)
                 </span>
               </div>
             </div>
-            <div className='frame-35'>
-              <div className='image-36' />
-              <div className='frame-37'>
-                <span className='estimation-certification-mineral'>
-                  Estimation and certification of Mineral Reserves (QP).
-                </span>
-              </div>
-            </div>
-            <div className='frame-38'>
-              <div className='image-39' />
-              <div className='frame-3a'>
-                <span className='business-planning-management'>
-                  Business planning and management support systems.
-                </span>
-              </div>
-            </div>
-            <div className='frame-3b'>
-              <div className='image-3c' />
-              <div className='frame-3d'>
-                <span className='creation-graphic-tool'>
-                  Creation of graphic tool for integrated planning and decision
-                  making.
+            <div className="frame-19">
+              <div className="frame-1a">
+                <span className="resource-reserve-estimation">
+                  Mineral Resource and Reserve Estimation
                 </span>
               </div>
             </div>
           </div>
-          <div className='frame-3e'>
-            <div className='frame-3f'>
-              <div className='image-40' />
-              <div className='frame-41'>
-                <span className='analysis-inputs-mina'>
-                  Analysis of inputs and Mina Planning Parameters.
+          <div className="frame-1b">
+            <div className="frame-1c">
+              <div className="frame-1d">
+                <span className="software-support-implementation">
+                  Software support and implementation
                 </span>
               </div>
             </div>
-            <div className='frame-42'>
-              <div className='image-43' />
-              <div className='frame-44'>
-                <span className='cad-d-systems'>
-                  CAD and 3D systems for support analysis and mining planimetry.
+            <div className="frame-1e">
+              <div className="frame-1f">
+                <span className="feasibility-studies">
+                  Conceptual, Prefeasibility and Feasibility Studies, Due <br />
+                  Diligence and Audits
                 </span>
               </div>
             </div>
-            <div className='frame-45'>
-              <div className='image-46' />
-              <div className='frame-47'>
-                <span className='data-processing'>
-                  Data processing: “Data Exploratory Technique”.
+            <div className="frame-20">
+              <div className="frame-21">
+                <span className="mining-gis-modeling">
+                  Mining GIS Modeling and Geomatics
                 </span>
               </div>
             </div>
           </div>
         </div>
+      )}
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Optimization of Mining System
+      </h2>
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {cards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div className='group-48' />
-      <div className='frame-49'>
-        <span className='optimization-mining-system'>
-          Optimization of Mining System
-        </span>
-        <div className='frame-4a'>
-          <div className='frame-4b'>
-            <div className='frame-4c'>
-              <div className='image-4d' />
-              <div className='frame-4e'>
-                <span className='integrated-mine-plant'>
-                  Integrated Mine - Plant and Mine - Dump Capacity Optimization
-                  (Mining sequence and strategic filling of dumps).
-                </span>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {cardss.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
               </div>
             </div>
-            <div className='frame-4f'>
-              <div className='image-50' />
-              <div className='frame-51'>
-                <span className='congestion-operational-risk'>
-                  Congestion and Operational Risk Analysis - Traffiic
-                  Optimization at Ramps and Accesses.
-                </span>
-              </div>
-            </div>
-            <div className='frame-52'>
-              <div className='image-53' />
-              <div className='frame-54'>
-                <span className='diagnosis-current-mining'>
-                  Diagnosis of the Current Mining Optimization and Operational
-                  System.
-                </span>
-              </div>
-            </div>
-            <div className='frame-55'>
-              <div className='image-56' />
-              <div className='frame-57'>
-                <span className='generation-execution-ideas'>
-                  Generation and Execution of Ideas to Improve the Current
-                  Process.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='frame-58'>
-          <div className='frame-59'>
-            <div className='image-5a' />
-            <div className='frame-5b'>
-              <span className='consulting-modeling-mining'>
-                Consulting and Modeling for Mining Simulation (Loading System -
-                Haulage - Maintenance of Roads / Auxiliary Equipment).
-              </span>
-            </div>
-          </div>
-          <div className='frame-5c'>
-            <div className='image-5d' />
-            <div className='frame-5e'>
-              <span className='strategic-mining-plans'>
-                Strategic Mining Plans and Cut-off Grade Optimization for the
-                Quest for Mining Asset Value.
-              </span>
-            </div>
-          </div>
-          <div className='frame-5f'>
-            <div className='image-60' />
-            <div className='frame-61'>
-              <span className='material-haulage-systems'>
-                Material Haulage Systems Optimizaition Studies (IPCC, autonomous
-                trucks, trolley assistance high slope belts, among others).
-              </span>
-            </div>
-          </div>
-        </div>
+          ))}
+        </Slider>
       </div>
-      <div className='flex-row-eb'>
-        <div className='group-62' />
-        <div className='frame-63'>
-          <span className='underground-mine-planning'>
-            Underground Mine Planning
-          </span>
-          <div className='frame-64'>
-            <div className='frame-65'>
-              <div className='frame-66'>
-                <div className='image-67' />
-                <div className='frame-68'>
-                  <span className='selection-mining-method'>
-                    Selection of Mining Method (Quantitative/Qualitative).
-                  </span>
-                </div>
-              </div>
-              <div className='frame-69'>
-                <div className='image-6a' />
-                <div className='frame-6b'>
-                  <span className='knowledge-benchmarking'>
-                    Knowledge and bechmarking (block caving, room and pillar,
-                    shrikage stoping, cut and fill, sub level stoping and
-                    caving).
-                  </span>
-                </div>
-              </div>
-              <div className='frame-6c'>
-                <div className='image-6d' />
-                <div className='frame-6e'>
-                  <span className='analysis-optimization-basic'>
-                    Analysis and optimization of basic underground mining
-                    operations.
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='frame-6f'>
-            <div className='frame-70'>
-              <div className='image-71' />
-              <div className='frame-72'>
-                <span className='span'>
-                  Underground mining plan control (block model, mining system,
-                  dilution).
-                </span>
-              </div>
-            </div>
-            <div className='frame-73'>
-              <div className='image-74' />
-              <div className='frame-75'>
-                <span className='span-76'>
-                  Material Handing: Loading and Haulage.
-                </span>
-              </div>
-            </div>
-            <div className='frame-77'>
-              <div className='image-78' />
-              <div className='frame-79'>
-                <span className='span-7a'>
-                  Ancillary operations: Ventilation, scaling, fortifications,
-                  others.
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className='frame-7b'>
-            <div className='frame-7c'>
-              <div className='image-7d' />
-              <div className='frame-7e'>
-                <span className='span-7f'>
-                  Estimation of Mineral Reserves (QP).
-                </span>
-              </div>
-            </div>
-            <div className='frame-80'>
-              <div className='image-81' />
-              <div className='frame-82'>
-                <span className='span-83'>Underground Mining Plan.</span>
-              </div>
-            </div>
-            <div className='frame-84'>
-              <div className='image-85' />
-              <div className='frame-86'>
-                <span className='span-87'>Planning Parameter.</span>
-              </div>
-            </div>
-          </div>
-          <div className='frame-88'>
-            <div className='frame-89'>
-              <div className='image-8a' />
-              <div className='frame-8b'>
-                <span className='span-8c'>Method of Underground Mining.</span>
-              </div>
-            </div>
-            <div className='frame-8d'>
-              <div className='image-8e' />
-              <div className='frame-8f'>
-                <span className='span-90'>Cut off Grade - Dilution.</span>
-              </div>
-            </div>
-            <div className='frame-91'>
-              <div className='image-92' />
-              <div className='frame-93'>
-                <span className='span-94'>Mining Recovery.</span>
-              </div>
-            </div>
-          </div>
-          <div className='frame-95'>
-            <div className='frame-96'>
-              <div className='image-97' />
-              <div className='frame-98'>
-                <span className='span-99'>
-                  Production Program and Economy Evalution.
-                </span>
-              </div>
-            </div>
-            <div className='frame-9a'>
-              <div className='image-9b' />
-              <div className='frame-9c'>
-                <span className='span-9d'>
-                  Design and comparison of haulage and access systems in subway
-                  mines.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='group-9e' />
-      <div className='frame-9f'>
-        <span className='span-a0'>Underground Mine Design and Methods</span>
-        <div className='frame-a1'>
-          <div className='frame-a2'>
-            <div className='frame-a3'>
-              <div className='image-a4' />
-              <div className='frame-a5'>
-                <span className='span-a6'>Sub Level Stoping</span>
-                <span className='span-a7'>
-                  Design Criteria
-                  <br />
-                  Stability of Shells
-                  <br />
-                  Fortification
-                  <br />
-                  Method Design
-                  <br />
-                  Backfill
-                  <br />
-                  Sequence
-                  <br />
-                  Ramps Design
-                  <br />
-                  Ventilation
-                  <br />
-                  Engineering Design
-                </span>
-              </div>
-            </div>
-            <div className='frame-a8'>
-              <div className='image-a9' />
-              <div className='frame-aa'>
-                <span className='span-ab'>Sub Level Caving</span>
-                <span className='span-ac'>
-                  Design Criteria
-                  <br />
-                  Extraction Elipsoid
-                  <br />
-                  Galleries Mesh
-                  <br />
-                  Drill and Blast Diagram
-                  <br />
-                  Transverse or longitudinal
-                  <br />
-                  SLC
-                  <br />
-                  Production Capacity
-                  <br />
-                  Material Handing Design
-                  <br />
-                  Ventilation
-                  <br />
-                  Engineering design
-                </span>
-              </div>
-            </div>
-            <div className='frame-ad'>
-              <div className='image-ae' />
-              <div className='frame-af'>
-                <span className='span-b0'>Block Caving</span>
-                <span className='span-b1'>
-                  Design Criteria
-                  <br />
-                  Extraction Elipsoid
-                  <br />
-                  Column Calculation
-                  <br />
-                  Productive Capacity
-                  <br />
-                  Extraction Mesh
-                  <br />
-                  BC Variants
-                  <br />
-                  Material Handing Design
-                  <br />
-                  Ventilation
-                  <br />
-                  Integral Design
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='flex-row-ace'>
-        <div className='group-b2' />
-        <span className='span-b3'>Quantitative Risk Analysis (QRA)</span>
-      </div>
-      <div className='flex-row-ee'>
-        <div className='frame-b4'>
-          <div className='frame-b5'>
-            <span className='span-b6'>
-              Modeling of factors affecting the mining plan
-            </span>
-          </div>
-        </div>
-        <div className='frame-b7'>
-          <div className='frame-b8'>
-            <span className='span-b9'>
-              Risk estimation and degree of reliability of the mining plan
-            </span>
-          </div>
-        </div>
-        <div className='vector' />
-      </div>
-      <div className='flex-row-efa'>
-        <div className='vector-ba' />
-        <div className='vector-bb' />
-      </div>
-      <div className='flex-row'>
-        <div className='frame-bc'>
-          <div className='frame-bd'>
-            <span className='modeling-factors-mining'>
-              Modeling of factors affecting the mining plan
-            </span>
-          </div>
-        </div>
-        <div className='frame-be'>
-          <div className='frame-bf'>
-            <span className='risk-estimation-reliability'>
-              Risk estimation and degree of reliability of the mining plan
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className='flex-row-c0'>
-        <div className='vector-c1' />
-        <div className='vector-c2' />
-        <div className='frame-c3'>
-          <div className='frame-c4'>
-            <span className='construction-mathematical-model'>
-              Construction of the mathematical model for quantitative rish
-              analysis
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className='group-c5' />
-      <div className='frame-c6'>
-        <span className='project-evaluation-c7'>Proyect Evaluation</span>
-        <div className='frame-c8'>
-          <div className='frame-c9'>
-            <div className='frame-ca'>
-              <div className='image-cb' />
-              <div className='frame-cc'>
-                <span className='project-evaluation-pea'>
-                  Project Evaluation: PEA - Conceptual, Pre-Feasibility and
-                  Feasibility
-                </span>
-              </div>
-            </div>
-            <div className='frame-cd'>
-              <div className='image-ce' />
-              <div className='frame-cf'>
-                <span className='characterization-ore-body'>
-                  Characterization of the ore body from a value standpoint
-                </span>
-              </div>
-            </div>
-            <div className='frame-d0'>
-              <div className='image-d1' />
-              <div className='frame-d2'>
-                <span className='estimation-mineral-resources'>
-                  Estimation of mineral resources and reserves
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='frame-d3'>
-          <div className='frame-d4'>
-            <div className='image-d5' />
-            <div className='frame-d6'>
-              <span className='technical-reports'>
-                Technical reports - Open pit and underground mining QPs
-              </span>
-            </div>
-          </div>
-          <div className='frame-d7'>
-            <div className='image-d8' />
-            <div className='frame-d9'>
-              <span className='technical-management-consulting'>
-                Technical management and research consulting
-              </span>
-            </div>
-          </div>
-          <div className='frame-da'>
-            <div className='image-db' />
-            <div className='frame-dc'>
-              <span className='engineering-resource-management'>
-                Engineering and resource management services
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='group-dd' />
-      <div className='frame-de'>
-        <span className='geological-models-estimation'>
-          Geological Models - Estimation of Mineral Resources & Reserves
-        </span>
-        <div className='frame-df'>
-          <div className='frame-e0'>
-            <div className='frame-e1'>
-              <div className='image-e2' />
-              <div className='frame-e3'>
-                <span className='integration-topographic-information'>
-                  Integration of topographic information to the national
-                  network.
-                </span>
-              </div>
-            </div>
-            <div className='frame-e4'>
-              <div className='image-e5' />
-              <div className='frame-e6'>
-                <span className='information-unification-database'>
-                  Information unifiication and advanced database management.
-                </span>
-              </div>
-            </div>
-            <div className='frame-e7'>
-              <div className='image-e8' />
-              <div className='frame-e9'>
-                <span className='review-qa-qc'>
-                  Review of Qa/Qc procedures. Gathering of Finding and
-                  Opportunities.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='frame-ea'>
-          <div className='frame-eb'>
-            <div className='image-ec' />
-            <div className='frame-ed'>
-              <span className='exploratory-analysis-data-science'>
-                Exploratory Analysis of Uni and Multivariable Information. Data
-                Science for Big Data Jobs.
-              </span>
-            </div>
-          </div>
-          <div className='frame-ee'>
-            <div className='image-ef' />
-            <div className='frame-f0'>
-              <span className='structural-geological-modeling'>
-                Structural geological modeling and different types of domains.
-                Geo Metallurgical models focused on recovery calculations - R.
-                Mass - Modifying factors.
-              </span>
-            </div>
-          </div>
-          <div className='frame-f1'>
-            <div className='image-f2' />
-            <div className='frame-f3'>
-              <span className='calculation-cut-off-nsr'>
-                Calculation of the Cut Off and/or NSR. Machine learning analysis
-                for geology-Geometallurgy and Geoest. Use of one-of-a-kind
-                Dagras Software for Big Data-Data Science analysis.
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className='frame-f4'>
-          <div className='frame-f5'>
-            <div className='frame-f6'>
-              <div className='image-f7' />
-              <div className='frame-f8'>
-                <span className='development-documents'>
-                  Development of Jorc type documents - NI 43-101 - SK1300 among
-                  others. Preparation and development of chapters in this area
-                  for Project level or LOM.
-                </span>
-              </div>
-            </div>
-            <div className='frame-f9'>
-              <div className='image-fa' />
-              <div className='frame-fb'>
-                <span className='estimation-resources'>
-                  Estimation of Resources and Reserves using Geostatistical
-                  techniques and others such as IVOR.
-                </span>
-              </div>
-            </div>
-            <div className='frame-fc'>
-              <div className='image-fd' />
-              <div className='frame-fe'>
-                <span className='declaration-resources'>
-                  Declaration of Resources and Reserves through QPs. Audits and
-                  Expert Reviews of Resources and Reserves by Specialty QPs.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='group-ff' />
-      <span className='geology-geometallurgy'>Geology & Geometallurgy</span>
-      <div className='flex-row-f'>
-        <div className='frame-100'>
-          <span className='technical-studies'>Technical Studies</span>
-          <span className='frame-101'>
-            Geology and exploration
-            <br />
-            Mineral Resources
-            <br />
-            Geometallurgy
-            <br />
-            Technical Report NI 43-101 / JORC
-            <br />
-            Mining Geology
-          </span>
-        </div>
-        <div className='frame-102'>
-          <div className='studies-vision'>
-            <span className='vector-103'>
-              Studies with an integral vision to identify fiindings and
-              opportunities in early stages, according to the reality of each
-              Project or Mine.
-            </span>
-          </div>
-        </div>
-        <div className='vector-104' />
-      </div>
-      <div className='flex-row-eb-105' />
-      <div className='frame-106'>
-        <div className='frame-107'>
-          <div className='workshops-companies'>
-            <span className='frame-108'>
-              For reasons of certainty requirements and risks controlled by
-              investors, the procedures for estimating, classifying and
-              declaring Mining Resources are increasingly demanding. The
-              numerous audits and due diligence currently being carried out
-              reflect this reality.
-            </span>
-          </div>
-        </div>
-        <div className='academic-support'>
-          <span className='vector-109'>Reviews and Audit</span>
-          <span className='vector-10a'>
-            High Level Review
-            <br />
-            Audits
-            <br />
-            Due Diligence
-          </span>
-        </div>
-        <div className='flex-row-ae' />
-      </div>
-      <div className='frame-10b' />
-      <div className='frame-10c'>
-        <div className='geotechnics-goemechanics'>
-          <div className='open-pit-slopes'>
-            <span className='geotechnical-research'>
-              Workshops aimed at companies or universities in order to
-              contribute to the reduction of the gap between the
-              academic-theoretical world, with emphasis on the current reality
-              of mining and consulting companies.
-            </span>
-          </div>
-        </div>
-        <div className='stability-analysis'>
-          <span className='geotechnical-studies'>
-            Academic Support and Workshops
-          </span>
-          <span className='underground-geomechanics'>
-            QA - QC
-            <br />
-            Applied Geometallurgy
-            <br />
-            Geostatistics
-            <br />
-            Fundamentals for Mineral Resources
-          </span>
-        </div>
-        <div className='group-10d' />
-      </div>
-      <div className='frame-10e'>
-        <div className='mining-gis-models' />
-        <span className='frame-10f'>Geotechnics & Goemechanics Area</span>
-      </div>
-      <span className='integration-topographic'>
-        Design of open of open pit slopes. Levels of conceptual, prefeasibility,
-        operations and closure studies
-      </span>
-      <span className='geotechnical-research-110'>
-        Geotechnical research and laboratory testing program.
-        <br />
-        Geotechnical modeling (geological, structural, rock mass and
-        hydrogeological model).
-        <br />
-        Structural and resistance domain - Structural analysis and kinematic
-        analysis.
-        <br />
-        Analysis of rock massif : method of equilibrium limits.
-        <br />
-        Sensitivity analysis of interramp slopes and generation of geotechnical
-        sectors.
-        <br />
-        Slope monitoring program and geotechnical risk assessment.
-      </span>
-      <span className='stability-analysis-111'>
-        Geotechnical studies: preparation of stability analysis
-      </span>
-      <span className='geotechnical-studies-112'>
-        Includes stability analysis in waste deposits, tailing dams, leach
-        piles, foundations of process plants. Levels of conceptual,
-        prefeasibility, feasibility, operations and closure studies.
-      </span>
-      <span className='geotechnical-research-113'>
-        Program of geotechnical research and laboratory test.
-        <br />
-        Physical stability analysis.
-        <br />
-        Analysis of mining infrastructure fundations.
-        <br />
-        Slope monotoring program.
-      </span>
-      <span className='underground-geomechanics-114'>
-        Underground geomechanics
-      </span>
-      <span className='geotechnical-research-115'>
-        Geotechnical research and laboratory testing program.
-        <br />
-        Structural interpretation and analysis.
-        <br />
-        Geotechnical modeling (geolofical, structural, rock mass and
-        hydrogeological model).
-        <br />
-        Geomechanical zoning.
-        <br />
-        Underground stability analysis.
-      </span>
-      <div className='group-116' />
-      <div className='frame-117'>
-        <span className='text-66'>Mining GIS Models</span>
-        <div className='wrapper-37'>
-          <div className='wrapper-38'>
-            <div className='group-30'>
-              <div className='pic-26' />
-              <div className='section-2b'>
-                <span className='text-67'>
-                  Integration of topographic information into the national
-                  network
-                </span>
-              </div>
-            </div>
-            <div className='wrapper-39'>
-              <div className='pic-27' />
-              <div className='section-2c'>
-                <span className='text-68'>
-                  Unification of graphic information in a database.
-                </span>
-              </div>
-            </div>
-            <div className='wrapper-3a'>
-              <div className='pic-28' />
-              <div className='box-31'>
-                <span className='text-69'>
-                  Graphic systems for property security evaluation.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='wrapper-3b'>
-          <div className='wrapper-3c'>
-            <div className='pic-29' />
-            <div className='box-32'>
-              <span className='text-6a'>
-                Graphic systems for emergency response
-              </span>
-            </div>
-          </div>
-          <div className='section-2d'>
-            <div className='img-28' />
-            <div className='wrapper-3d'>
-              <span className='text-6b'>
-                Characterizacion of sufrace lands (neighboring properties,
-                extension of concessions, hydrogeology, hydrography, potencial
-                for landfills, among others)
-              </span>
-            </div>
-          </div>
-          <div className='wrapper-3e'>
-            <div className='pic-2a' />
-            <div className='section-2e'>
-              <span className='text-6c'>
-                Updating in systems and use of coordinates and datums (Training
-                included).
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className='wrapper-3f'>
-          <div className='wrapper-40'>
-            <div className='section-2f'>
-              <div className='image-118' />
-              <div className='frame-119'>
-                <span className='web-plans'>Web plans</span>
-              </div>
-            </div>
-            <div className='frame-11a'>
-              <div className='image-11b' />
-              <div className='frame-11c'>
-                <span className='satellite-images'>
-                  Application of satellite images
-                </span>
-              </div>
-            </div>
-            <div className='frame-11d'>
-              <div className='image-11e' />
-              <div className='frame-11f'>
-                <span className='data-acquisition-use'>
-                  Upgrades in a new technologies for data acquisition and use
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='flex-row-d'>
-        <div className='group-120' />
-        <span className='software-developments'>Software and Developments</span>
-      </div>
-      <div className='frame-121'>
-        <div className='frame-122'>
-          <div className='image-123' />
-          <span className='software-acquisition'>
-            Provision of software and support for the acquisition of licences
-          </span>
-        </div>
-      </div>
-      <div className='flex-row-cbe'>
-        <div className='frame-124'>
-          <div className='frame-125'>
-            <div className='image-126' />
-            <span className='online-consulting'>
-              On-line consulting and support of the applications under
-              concession
-            </span>
-          </div>
-        </div>
-        <div className='vector-127' />
-      </div>
-      <div className='flex-row-ff'>
-        <div className='frame-128'>
-          <div className='frame-129'>
-            <div className='image-12a' />
-            <span className='contribution-mining'>
-              Contribution to new developments and applications in mining
-            </span>
-          </div>
-        </div>
-        <div className='vector-12b' />
-      </div>
-      <div className='rectangle-12c'>
-        <div className='flex-column'>
-          <div className='darat-arabe' />
-          <div className='frame-12d'>
-            <div className='instagram-svg'>
-              <div className='instagram-svg-fill'>
-                <div className='instagram-svg-12e'>
-                  <div className='group-12f'>
-                    <div className='group-130'>
-                      <div className='group-131'>
-                        <div className='group-132'>
-                          <div className='vector-133' />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='tiktok-svg'>
-              <div className='tiktok-svg-fill'>
-                <div className='tiktok-svg-134'>
-                  <div className='group-135'>
-                    <div className='vector-136' />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='linkedin-svg'>
-              <div className='linkedin-svg-fill'>
-                <div className='linkedin-svg-137'>
-                  <div className='group-138'>
-                    <div className='group-139'>
-                      <div className='vector-13a' />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='group-13b' />
-          <div className='group-13c' />
-          <div className='group-13d' />
-          <div className='group-13e' />
-          <div className='vector-13f' />
-          <div className='group-140' />
-        </div>
-        <div className='flex-column-eed'>
-          <span className='darat-saudi-vision'>
-            DARAT is a saudi-based corporation dedicated to the Saudi 2030
-            vision, offering various integrated solutions that encompass
-            top-tier services and high end products.
-          </span>
-          <span className='darat-contracting-company'>
-            © 2024 Darat Contracting Company
-          </span>
-          <div className='group-141' />
-          <div className='group-142' />
-        </div>
-        <div className='flex-column-da'>
-          <div className='group-143' />
-          <div className='group-144' />
-        </div>
-        <a href="#mining-section">
-  <div className='vector-145' />
-</a>
-      </div>
-     
     </div>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Underground Mine Planning
+      </h2>
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {solution.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {solution.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Underground Mine Design and Methods
+      </h2>
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {minning.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {minning.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
+    <div className="flex flex-col items-center p-8">
+        <h2 className="text-2xl font-bold mb-8">
+          Quantitative Risk Analysis (QRA)
+        </h2>
+
+        <div className="circle-data">
+          <div className="flex-row-ee">
+            <div className="frame-b4">
+              <div className="frame-b5">
+                <span className="span-b6">
+                  Modeling of <br /> factors affecting <br /> the mining plan
+                </span>
+              </div>
+            </div>
+            <div className="frame-b7">
+              <div className="frame-b8">
+                <span className="span-b9">
+                  Risk estimation and <br /> degree of reliability <br /> of the mining plan
+                </span>
+              </div>
+            </div>
+            <div className="vector" />
+          </div>
+          <div className="flex-row-efa">
+            <div className="vector-ba" />
+            <div className="vector-bb" />
+          </div>
+          <div className="flex-row">
+            <div className="frame-bc">
+              <div className="frame-bd">
+                <span className="modeling-factors-mining">
+                  Modeling of <br /> factors affecting <br /> the mining plan
+                </span>
+              </div>
+            </div>
+            <div className="frame-be">
+              <div className="frame-bf">
+                <span className="risk-estimation-reliability">
+                  Risk estimation and <br /> degree of reliability <br /> of the mining plan
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="flex-row-c0">
+            <div className="vector-c1" />
+            <div className="vector-c2" />
+            <div className="frame-c3">
+              <div className="frame-c4">
+                <span className="construction-mathematical-model">
+                  Construction of the <br /> mathematical model <br /> for quantitative rish <br />
+                  analysis
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Project Evaluation
+      </h2>
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {proto.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {proto.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Geological Models - Estimation of Mineral Resources & Reserves
+      </h2>
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {geologicalCards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {geologicalCards.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
+<div className="geology-wrapper p-6 space-y-8">
+      <h2 className="text-2xl font-bold mb-4">Geology & Geometallurgy</h2>
+
+      {sections.map((section, index) => (
+        <div key={index} className="flex flex-cols md:flex-row items-center md:items-center space-y-4 md:space-y-0 md:space-x-6 border-b pb-4">
+          <div className="flex-1">
+            <h3 className="text-sm md:text-lg font-semibold mb-2">{section.title}</h3>
+            <ul  className="list-disc geology-list list-inside space-y-1  md:text-sm text-gray-600">
+              {section.points.map((point, idx) => (
+                <li key={idx}>{point}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex-none">
+            <span className="arrow">➔</span>
+          </div>
+          <div className="flex-1 geology-des bg-gray-100 p-4 rounded-md shadow  text-gray-600">
+            {section.description}
+          </div>
+        </div>
+      ))}
+    </div>
+<div className="container p-16">
+      <h1 className="main-title">Geotechnics & Geomechanics Area</h1>
+
+      <div className="section-title">Design of open pit slopes. Levels of conceptual, prefeasibility, operations, and closure studies</div>
+      <ul className="list">
+        <li>Geotechnical research and laboratory testing program.</li>
+        <li>Geotechnical modeling (geological, structural, rock mass and hydrogeological model).</li>
+        <li>Structural and resistance domain. Structural analysis and kinematic analysis.</li>
+        <li>Analysis of rock massif: method of equilibrium limits.</li>
+        <li>Sensitivity analysis of interramp slopes and generation of geotechnical sectors.</li>
+        <li>Slope monitoring program and geotechnical risk assessment.</li>
+      </ul>
+
+      <h2 className="sub-title">Geotechnical studies: preparation of stability analysis</h2>
+      <p>Includes stability analysis in waste deposits, tailing dams, leach piles, foundations of process plants. Levels of conceptual, prefeasibility, feasibility, operations, and closure studies.</p>
+      <ol className="list1">
+        <li>Program of geotechnical research and laboratory test.</li>
+        <li>Physical stability analysis.</li>
+        <li>Analysis of mining infrastructure foundations.</li>
+        <li>Slope monitoring program.</li>
+      </ol>
+
+      <h2 className="sub-title">Underground geomechanics</h2>
+      <ol className="list1">
+        <li>Geotechnical research and laboratory testing program.</li>
+        <li>Structural interpretation and analysis.</li>
+        <li>Geotechnical modeling (geological, structural, rock mass, and hydrogeological model).</li>
+        <li>Geomechanical zoning.</li>
+        <li>Underground stability analysis.</li>
+      </ol>
+    </div>
+<div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+      Geological Models - Estimation of Mineral Resources & Reserves
+      </h2>
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {lastcards.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {lastcards.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
+ <div class="container-mine-last">
+ <h2 className=" text-3xl service-solution md:mt-16 font-bold mb-8" >Software and Developments</h2>
+          <div class="frame-121">
+            <div class="frame-122">
+              <div class="image-123"></div>
+              <span class="software-acquisition">
+                Provision of software and support for the acquisition of
+                licences
+              </span>
+            </div>
+          </div>
+
+          <div class="flex-row-cbe">
+            <div class="vector-127"></div>
+
+            <div class="frame-124">
+              <div class="frame-125">
+                <div class="image-126"></div>
+                <span class="online-consulting">
+                  On-line consulting and support of the applications under
+                  concession
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-row-ff">
+            <div class="vector-12b"></div>
+
+            <div class="frame-128">
+              <div class="frame-129">
+                <div class="image-12a"></div>
+                <span class="contribution-mining">
+                  Contribution to new developments and applications in mining
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+    <div className="banner">
+      <div className="content">
+        <p className="text">
+          DARAT is a saudi-based corporation dedicated to the Saudi 2030 vision, offering various integrated solutions that encompass top-tier services and high end products.
+        </p>
+        <div className="logo-section">
+          <h1 className="logo">
+            <img style={{width:'50%'}} src={logo} alt="" />
+          </h1>
+          <div className="flex social-media space-x-4">
+        <a href="#instagram" className="text-white text-xl"><FaInstagram /></a>
+        <a href="#instagram" className="text-white text-xl"><FaTiktok /></a>
+        <a href="#linkedin" className="text-white text-xl"><FaLinkedinIn /></a>
+      </div>
+        </div>
+      </div>
+    </div>
+   </>
   );
 }

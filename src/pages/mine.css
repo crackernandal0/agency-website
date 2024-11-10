@@ -1,0 +1,300 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+  }
+  
+  .main-container {
+    overflow: hidden;
+  }
+  
+  .main-container,
+  .main-container * {
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  textarea,
+  button {
+    outline: 0;
+  }
+  
+  .main-container {
+    position: relative;
+    width: 440px;
+    height: 1418px;
+    margin: 0 auto;
+    background: #ffffff;
+    overflow: hidden;
+  }
+  .vector {
+    position: relative;
+    width: 5.383px;
+    height: 1.098px;
+    margin: 16.925px 0 0 393.813px;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 9;
+  }
+  .flex-row {
+    position: relative;
+    width: 395.431px;
+    height: 77.893px;
+    margin: -0.06px 0 0 50.672px;
+    z-index: 68;
+  }
+  .group {
+    position: absolute;
+    width: 7.25%;
+    height: 38.85%;
+    top: 0;
+    left: 87.4%;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 16;
+  }
+  .vector-1 {
+    position: relative;
+    width: 6.355px;
+    height: 1.296px;
+    margin: 19.977px 0 0 14.881px;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 5;
+  }
+  .group-2 {
+    position: absolute;
+    width: 8.45%;
+    height: 34.99%;
+    top: 0.04%;
+    left: 91.32%;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 6;
+  }
+  .group-3 {
+    position: relative;
+    width: 9.418px;
+    height: 9.878px;
+    margin: 8.207px 0 0 15.579px;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 14;
+  }
+  .vector-4 {
+    position: relative;
+    width: 6.355px;
+    height: 1.296px;
+    margin: 1.862px 0 0 11.213px;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 4;
+  }
+  .group-5 {
+    position: absolute;
+    width: 6.97%;
+    height: 12.67%;
+    top: 2.86%;
+    left: 82.52%;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 17;
+  }
+  .group-6 {
+    position: absolute;
+    width: 6.05%;
+    height: 32.89%;
+    top: 10.64%;
+    left: 84.07%;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 7;
+  }
+  .group-7 {
+    position: absolute;
+    width: 4.99%;
+    height: 5.18%;
+    top: 14.58%;
+    left: 86.42%;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 10;
+  }
+  .frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    width: 123.118px;
+    height: 65.852px;
+    top: 12.041px;
+    left: 50%;
+    background: #ffffff;
+    transform: translate(-160.59%, 0);
+    z-index: 53;
+    border-radius: 7.879px;
+    box-shadow: 0 1.854px 1.854px 0 rgba(0, 0, 0, 0.25);
+  }
+  .frame-8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 8.343px;
+    position: relative;
+    min-width: 0;
+    height: 65.815px;
+    padding: 0 13.905px 0 13.905px;
+    z-index: 54;
+  }
+  .modeling-factors-mining {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    width: 73.694px;
+    height: 24.101px;
+    color: #000000;
+    font-family: Area Normal Trial, var(--default-font-family);
+    font-size: 8.523530960083008px;
+    font-weight: 800;
+    line-height: 8.83px;
+    text-align: center;
+    z-index: 55;
+  }
+  .frame-9 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    width: 123.118px;
+    height: 65.852px;
+    top: 12.041px;
+    left: 50%;
+    background: #ffffff;
+    transform: translate(4.69%, 0);
+    z-index: 56;
+    border-radius: 7.879px;
+    box-shadow: 0 1.854px 1.854px 0 rgba(0, 0, 0, 0.25);
+  }
+  .frame-a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 8.343px;
+    position: relative;
+    min-width: 0;
+    height: 65.815px;
+    padding: 0 13.905px 0 13.905px;
+    z-index: 57;
+  }
+  .risk-estimation-reliability {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    width: 85.745px;
+    height: 24.101px;
+    color: #000000;
+    font-family: Area Normal Trial, var(--default-font-family);
+    font-size: 8.523530960083008px;
+    font-weight: 800;
+    line-height: 8.83px;
+    text-align: center;
+    z-index: 58;
+  }
+  .group-b {
+    position: absolute;
+    width: 13.15%;
+    height: 24.62%;
+    top: 33.05%;
+    left: 86.62%;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 15;
+  }
+  .group-c {
+    position: absolute;
+    width: 13.07%;
+    height: 36.53%;
+    top: 38.86%;
+    left: 85.84%;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 12;
+  }
+  .group-d {
+    position: relative;
+    width: 24.654px;
+    height: 14.977px;
+    margin: 7.883px 0 0 13.51px;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 8;
+  }
+  .group-e {
+    position: absolute;
+    width: 5.23%;
+    height: 41.88%;
+    top: 46.26%;
+    left: 94.77%;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 11;
+  }
+  .group-f {
+    position: relative;
+    width: 9.418px;
+    height: 13.238px;
+    margin: 18.118px 0 0 11.373px;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 13;
+  }
+  .vector-10 {
+    position: absolute;
+    width: 34.378px;
+    height: 13.652px;
+    top: 38.371px;
+    left: 146.813px;
+    background: url(../assets/mine/1starrow.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 68;
+  }
+  .flex-row-ebc {
+    position: relative;
+    width: 358.659px;
+    height: 58.187px;
+    margin: 0.52px 0 0 0px;
+    z-index: 71;
+  }

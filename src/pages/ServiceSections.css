@@ -56,7 +56,25 @@
         font-size: 30px !important;
     }
     .services{
-        height: 115vh !important;
+        height: 200vh !important;
     }
+    .mask-group{
+      height: 200vh !important;
+    }
+    .service-image{
+      transform: rotate(-90deg);
+      position: absolute;
+      left: 37%;
+    }
+    
+      .service-image-2{
+        position: absolute;
+        z-index: 2;
+        bottom: -30rem !important;
+        left: -117px !important;
+        transform: rotate(90deg);
+        left: none !important;
+      }
+   
   }
   

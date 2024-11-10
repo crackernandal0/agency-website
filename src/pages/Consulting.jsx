@@ -1,875 +1,1070 @@
-import React from 'react';
-import './Consulting.css';
+// eslint-disable-next-line
+import React from "react";
+import "./Consulting.css"; // Create this CSS file for styling
+// import image1 from '../assets/images/Group 145.png'
+import image2 from "../assets/images/Group 146.png";
 
-export default function Consulting() {
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaInstagram } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
+import logo from "../assets/images/logo (2).png";
+import apex from "../assets/images/apex.png";
+import apex2 from "../assets/images/apex2.png";
+import group from "../assets/images/Group 145.png";
+// import group2 from '../assets/images/Group 146.png'
+import tacle1 from "../assets/home/setting.png";
+import tackle2 from "../assets/home/avtar.png";
+import tackle1 from "../assets/home/cost.png";
+import process3 from "../assets/home/search.png";
+import process2 from "../assets/home/setting.png";
+import process1 from "../assets/home/idea.png";
+import process4 from "../assets/home/board.png";
+import digital1 from "../assets/images/digital1.png";
+import digital6 from "../assets/images/digital6.png";
+import digital2 from "../assets/images/digital2.png";
+import digital3 from "../assets/images/digital3.png";
+import digital5 from "../assets/images/digital5.png";
+import solution1 from "../assets/images/solution1.png";
+import solution2 from "../assets/images/solution2.png";
+import solution3 from "../assets/images/solution3.png";
+import solution4 from "../assets/images/solution4.png";
+import solution5 from "../assets/images/solution5.png";
+import solution6 from "../assets/images/solution6.png";
+import software1 from "../assets/images/software1.png";
+import software2 from "../assets/images/software2.png";
+import software3 from "../assets/images/software3.png";
+import software4 from "../assets/images/software4.png";
+import ai1 from "../assets/images/ai1.png";
+import ai2 from "../assets/images/ai2.png";
+import ai3 from "../assets/images/ai3.png";
+import ai4 from "../assets/images/ai4.png";
+import lastsolutions1 from "../assets/images/lastsolutions1.png";
+import lastsolutions2 from "../assets/images/lastsolutions2.png";
+import lastsolutions3 from "../assets/images/lastsolutions3.png";
+import lastsolutions4 from "../assets/images/lastsolutions4.png";
+import lastsolutions5 from "../assets/images/lastsolutions5.png";
+import lastsolutions6 from "../assets/images/lastsolutions6.png";
+import lastcard1 from "../assets/images/lastcard1.png";
+import lastcard2 from "../assets/images/lastcard2.png";
+import lastcard3 from "../assets/images/lastcard3.png";
+import lastcard4 from "../assets/images/lastcard4.png";
+import lastcard5 from "../assets/images/lastcard5.png";
+import lastcard6 from "../assets/images/lastcard6.png";
+import lastcard7 from "../assets/images/lastcard7.png";
+import Graident from "../assets/home/1.png";
+
+import background from "../assets/images/consulting.png";
+
+const Consulting = () => {
+  // const isMobile = window.innerWidth <= 768;
+
+  const Card = ({ title, content }) => {
+    return (
+      <div className="card-item">
+        <h3 className="card-title">{title}</h3>
+        <p className="card-content">{content}</p>
+      </div>
+    );
+  };
+
+  const Cards = ({ title, items }) => {
+    return (
+      <div className="data-card">
+        <h3 className="data-card-title">{title}</h3>
+        <ul style={{ listStyle: "disc" }} className="data-card-list">
+          {items.map((item, index) => (
+            <li key={index} className="data-card-item">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1, // Show one main slide at a time
+    centerMode: true, // Center the slide
+    centerPadding: "0", // Adjust padding to show partial slides on both sides
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "25%", // Show partial slides on mobile
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "20%", // Narrower padding for smaller screens
+        },
+      },
+    ],
+  };
+
+  const cards = [
+    {
+      title: "Digital Strategy Development",
+      description: (
+        <ul>
+          <li>
+            Conduct a digital maturity assessment to identify areas for
+            improvement.
+          </li>
+          <li>
+            Define a clear digital vision and roadmap aligned with business
+            objectives.
+          </li>
+        </ul>
+      ),
+      imageUrl: digital1, // Replace with actual image paths or URLs
+    },
+    {
+      title: "Process Automation",
+      description: (
+        <ul>
+          <li>
+            Identify manual processes and automate them using software
+            solutions.
+          </li>
+          <li>
+            Implement workflow management systems to streamline operations.
+          </li>
+        </ul>
+      ),
+      imageUrl: digital6,
+    },
+    {
+      title: "Cloud Infrastructure",
+      description: (
+        <ul>
+          <li>
+            Migrate data and applications to cloud platforms (e.g., AWS, Azure,
+            Google Cloud).
+          </li>
+          <li>Ensure scalability, security, and reliability.</li>
+        </ul>
+      ),
+      imageUrl: digital3,
+    },
+    {
+      title: "Data Analytics and Visualization",
+      description: (
+        <ul>
+          <li>
+            Implement data analytics tools (e.g., Tableau, Power BI) to gain
+            insights.
+          </li>
+          <li>
+            Develop dashboards for real-time monitoring and decision-making.
+          </li>
+        </ul>
+      ),
+      imageUrl: digital5,
+    },
+    {
+      title: "Employee Training and Support",
+      description: (
+        <ul>
+          <li>Provide training on new digital tools and processes.</li>
+          <li>Offer ongoing support to ensure successful adoption.</li>
+        </ul>
+      ),
+      imageUrl: digital2,
+    },
+  ];
+
+  const solutions = [
+    {
+      title: "Custom Software Development",
+      description:
+        "Develop tailored software solutions to automate processes, improve efficiency, and enhance customer experience.",
+      imageUrl: solution1,
+    },
+    {
+      title: "Mobile App Development",
+      description:
+        "Create mobile applications to engage customers, improve sales, and enhance brand visibility.",
+      imageUrl: solution2,
+    },
+    {
+      title: "Artificial Intelligence (AI) and Machine Learning (ML) Solutions",
+      description:
+        "Implement AI and ML to analyze data, predict trends, and optimize business decisions.",
+      imageUrl: solution3,
+    },
+    {
+      title: "Internet of Things (IoT)",
+      description:
+        "Develop IoT solutions to monitor and control devices, optimize processes, and improve efficiency.",
+      imageUrl: solution4,
+    },
+    {
+      title: "Data Analytics and Visualization",
+      description:
+        "Develop data analytics and visualization tools to gain insights, track performance, and inform business decisions.",
+      imageUrl: solution5,
+    },
+    {
+      title: "Cloud-Based Software Solutions",
+      description:
+        "Develop cloud-based software solutions to enhance collaboration, improve scalability, and reduce costs.",
+      imageUrl: solution6,
+    },
+  ];
+
+  const softwareSolutions = [
+    {
+      title: "Custom Made",
+      description:
+        "Tailor-made software solutions that meet your unique business needs. Our team utilizes cutting-edge technologies to deliver efficient, scalable, and flexible applications.",
+      imageUrl: software1,
+    },
+    {
+      title: "E-Commerce",
+      description:
+        "Boost your online sales with our robust e-commerce platforms. We offer everything from online storefronts to order management, ensuring a seamless shopping experience.",
+      imageUrl: software2,
+    },
+    {
+      title: "Booking App",
+      description:
+        "Simplify booking processes with our versatile app designed for various industries. Enhance customer satisfaction with features like online booking, appointment management, and payment processing.",
+      imageUrl: software4,
+    },
+    {
+      title: "LMS (Learning Management System)",
+      description:
+        "Transform employee training with our comprehensive LMS. Manage courses, track progress, and issue certifications to boost skills and performance.",
+      imageUrl: software3,
+    },
+  ];
+
+  const aiSolutions = [
+    {
+      title: "Process Automation",
+      description:
+        "Automate repetitive tasks using Robotic Process Automation (RPA) and ML.",
+      imageUrl: ai3,
+    },
+    {
+      title: "Predictive Analytics",
+      description:
+        "Forecast outcomes using statistical models and ML algorithms.",
+      imageUrl: ai2,
+    },
+    {
+      title: "Decision Support Systems",
+      description: "Develop AI-powered decision-making tools.",
+      imageUrl: ai1,
+    },
+    {
+      title: "Natural Language Processing (NLP)",
+      description: "Analyze and generate human language.",
+      imageUrl: ai4,
+    },
+  ];
+
+  const lastsolutions = [
+    {
+      title: "Data Integration",
+      description:
+        "Gathering data from various sources: databases, spreadsheets, APIs.",
+      imageUrl: lastsolutions1,
+    },
+    {
+      title: "Data Labeling",
+      description:
+        "High-quality labeling for text, audio, video, and image data to support AI training.",
+      imageUrl: lastsolutions2,
+    },
+    {
+      title: "Data Processing",
+      description:
+        "Clean, transform, and prepare your data for in-depth analysis.",
+      imageUrl: lastsolutions3,
+    },
+    {
+      title: "Data Analysis",
+      description:
+        "Applying statistical models, algorithms, and data visualization techniques.",
+      imageUrl: lastsolutions4,
+    },
+    {
+      title: "Data Visualization",
+      description: "Creating interactive dashboards and reports.",
+      imageUrl: lastsolutions5,
+    },
+    {
+      title: "Insight Generation",
+      description: "Identifying trends, patterns, and correlations.",
+      imageUrl: lastsolutions6,
+    },
+  ];
+
+  const lastcards = [
+    {
+      imageUrl: lastcard1,
+      title: "Project Management",
+      description: "Plan, execute and monitor projects effectively.",
+    },
+    {
+      imageUrl: lastcard2,
+      title: "Procurement",
+      description: "Streamline and automate the purchasing process.",
+    },
+    {
+      imageUrl: lastcard3,
+      title: "Financial Management and Accounting",
+      description:
+        "Track financial transactions, budgeting, invoicing, and reporting.",
+    },
+    {
+      imageUrl: lastcard4,
+      title: "HRM",
+      description:
+        "Automate HR processes including payroll, attendance, and performance evaluation.",
+    },
+    {
+      imageUrl: lastcard5,
+      title: "CRM",
+      description:
+        "Manage customer interactions, track leads, and streamline sales processes.",
+    },
+    {
+      imageUrl: lastcard6,
+      title: "Inventory",
+      description:
+        "Optimize inventory levels, track stock movements, and ensure accurate forecasting.",
+    },
+    {
+      imageUrl: lastcard7,
+      title: "E-Commerce",
+      description:
+        "Manage online stores, streamline order processing, inventory management, and customer support.",
+    },
+  ];
+
   return (
-    <div id="consulting-section" className='consulting-main-container'>
-      {/* <div className='consulting-rectangle'>
-        <div className='consulting-frame'>
-          <div className='consulting-clip-path-group'>
-            <div className='consulting-group'>
-              <div className='consulting-clip-path-group-1'>
-                <div className='consulting-group-2'>
-                  <div className='consulting-clip-path-group-3'>
-                    <div className='consulting-group-4'>
-                      <div className='consulting-rectangle-5' />
-                    </div>
-                  </div>
-                </div>
+    <>
+      <main
+        className="relative bg-cover bg-center "
+        style={{
+          backgroundImage: `url(${background})  ,  url(${Graident})`,
+          opacity: "0.9",
+          height: "125vh",
+        }}
+      >
+        <img
+          className="electro-image"
+          style={{ position: "absolute", right: "0" }}
+          src={group}
+          alt=""
+        />
+        <img
+          className="electro-image-1"
+          style={{ position: "absolute", left: "0", bottom: "0" }}
+          src={group}
+          alt=""
+        />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div
+          style={{ position: "absolute", bottom: "40px" }}
+          className="relative electro-heading z-10 text-white p-4   md:p-8 lg:p-8 text-left"
+        >
+          <h1 style={{ fontSize: "35px" }} className="it-title font-bold">
+            Consulting
+          </h1>
+          <p
+            style={{ fontSize: "48px" }}
+            className="mt-4 it-des italic  align-left"
+          >
+            Unlocking potential with AI, data labeling, and software tailored to
+            your goals.
+          </p>
+        </div>
+      </main>
+      <div className="consulting-container">
+        <img
+          className="electro-image-22"
+          style={{ position: "absolute", right: "0" }}
+          src={group}
+          alt=""
+        />
+        <header className="consulting-header">
+          <h1>
+            Innovation and technology <br /> should make life simple.
+          </h1>
+          <p>
+            That’s why, here at Darat Co., we make sure innovation <br /> works
+            for you, your business, and your people.
+          </p>
+          <p>
+            We are dedicated to provide solutions tailored to your needs. <br />{" "}
+            Our team works tirelessly to deliver exceptional AI solutions,{" "}
+            <br /> data labeling, and software development.
+          </p>
+        </header>
+        <img
+          className="electro-image-22"
+          style={{ position: "absolute", right: "0" }}
+          src={group}
+          alt=""
+        />
+        <section className="problems-section">
+          <h2>Problems to tackle</h2>
+
+          <div className="problems-grid">
+            <div className="problem-card">
+              <div className="problem-icon">
+                <img src={tacle1} alt="" />
               </div>
+              <p>Struggling with inefficient business processes</p>
+            </div>
+            <div className="problem-card">
+              <div className="problem-icon">
+                <img src={tackle1} alt="" />
+              </div>
+              <p>
+                High operational <br /> cost
+              </p>
+            </div>
+            <div className="problem-card">
+              <div className="problem-icon">
+                <img src={tackle2} alt="" />
+              </div>
+              <p>and poor customer engagement?</p>
             </div>
           </div>
-          <div className='consulting-frame-6'>
-            <div className='consulting-frame-7'>
-              <span className='consulting-services'>SERVICES</span>
-            </div>
-            <span className='consulting-about-us'>ABOUT US</span>
-            <span className='consulting-proyects'>PROYECTS</span>
-            <span className='consulting-contact-us'>CONTACT US</span>
-          </div>
-          <div className='consulting-group-8' />
-        </div>
-      </div> */}
-      <div className='consulting-mask-group' />
-      <div className='consulting--uhd-fps' />
-      <div className='consulting-group-9' />
-      <span  className='consulting-consulting-text'>Consulting</span>
-      <span className='consulting-consulting-text-a'>
-        Unlocking potential with AI, data labeling, and software tailored to
-        your goals.
-      </span>
-      <div className='consulting-flex-row-fa'>
-        <span className='consulting-services-text'>Home > Services > Consulting</span>
-        <div className='consulting-group-b' />
-        <div className='consulting-frame-c'>
-          <span className='consulting-innovation-text'>
-            Innovation and technology should make life simple.
-          </span>
-          <span className='consulting-innovation-text-d'>
-            That´s why, here at Darat Co. we make sure innovation works for you,
-            your business, and your people.
-          </span>
-          <span className='consulting-innovation-text-d'>
-            We are dedicated to provide solutions tailored to your needs. Our
-            team works tirelessly to deliver exceptional AI solutions, data
-            labeling, and software development.
-          </span>
-        </div>
+        </section>
+
+        <footer className="consulting-footer">
+          <p>
+            Darat understands these challenges and offers <br /> innovative
+            solutions to help and overcome them.
+          </p>
+        </footer>
       </div>
-      <div className='consulting-flex-row-e'>
-        <div className='consulting-group-f' />
-        <span className='consulting-problems-text'>Problems to tackle</span>
-        <div className='consulting-rectangle-10'>
-          <div className='consulting-image' />
-          <span className='consulting-problems-text-11'>
-            Struggling with inefficent business processes
-          </span>
-        </div>
-        <div className='consulting-rectangle-12'>
-          <div className='consulting-image-13' />
-          <span className='consulting-problems-text-14'>High operational cost</span>
-        </div>
-        <div className='consulting-rectangle-15'>
-          <div className='consulting-image-16' />
-          <span className='consulting-problems-text-17'>
-            and poor customer engagement?
-          </span>
-        </div>
-      </div>
-      <span className='consulting-problems-text-18'>
-        Darat understand these challenges and offers innovative solutions to
-        help and overcome them.
-      </span>
-      <div className='consulting-rectangle-19'>
-        <span className='consulting-process-text'>Process</span>
-        <div className='consulting-flex-row-aed'>
-          <div className='consulting-image-1a' />
-          <div className='consulting-image-1b' />
-        </div>
-        <div className='consulting-flex-row-dac'>
-          <span className='consulting-diagnosis-text'>Diagnosis</span>
-          <span className='consulting-strategt-development-text'>
-            Strategt Development
-          </span>
-        </div>
-        <div className='consulting-flex-row-e-1c'>
-          <span className='consulting-assessment-text'>
-            We begin by conducting a thorough assessment of your business
-            challenges and needs, identifying key areas for improvement.
-          </span>
-          <span className='consulting-strategy-text'>
-            Our team crafts a tailored strategy, leveraging advanced AI, custom
-            software solutions, and data analytics to address your specific
-            requirements.
-          </span>
-        </div>
-        <div className='consulting-flex-row-fa-1d'>
-          <div className='consulting-image-1e' />
-          <div className='consulting-image-1f' />
-        </div>
-        <div className='consulting-flex-row-ac'>
-          <span className='consulting-implementation-text'>Implementation</span>
-          <span className='consulting-optimization-text'>Optimization</span>
-        </div>
-        <div className='consulting-flex-row-dbf'>
-          <span className='consulting-integration-text'>
-            We seamlessly integrate our solutions into your existing
-            infrastructure, ensuring minimal disruption and maximum efficiency.
-          </span>
-          <span className='consulting-monitoring-text'>
-            Continuous monitoring and feedback help us refine and optimize our
-            solutions, ensuring sustained growth and improved performance for
-            your company.
-          </span>
-        </div>
-      </div>
-      <div className='consulting-flex-row-a'>
-        <div className='consulting-group-20' />
-        <div className='consulting-frame-21'>
-          <div className='consulting-frame-22'>
-            <div className='consulting-frame-23'>
-              <span className='consulting-digital-transformation-text'>
-                Digital Transformation
-              </span>
-              <div className='consulting-digital-transformation-text-24'>
-                <span className='consulting-digital-transformation-text-25'>
-                  Digitalization is key for companies to stay afloat and thrive.
-                  They require assistance in adopting digital technologies such
-                  as cloud computing, data analytics, and e-commerce platforms
-                  to streamline operations, improve efficiency, and expand their
-                  customer base.
-                </span>
-              </div>
-              <span className='consulting-digital-transformation-text-26'>
-                Aim: Integrate digital technologies into SME operations,
-                processes, and culture.
-              </span>
+      <div className="process-container">
+        <h2>Process</h2>
+        <div className="process-grid">
+          <div className="process-card">
+            <div className="process-icon">
+              <img src={process3} alt="" />
             </div>
-            <div className='consulting-frame-27'>
-              <div className='consulting-frame-28'>
-                <div className='consulting-frame-29'>
-                  <div className='consulting-image-2a' />
-                  <div className='consulting-frame-2b'>
-                    <span className='consulting-digital-strategy-development-text'>
-                      Digital Strategy Development
-                    </span>
-                    <span className='consulting-digital-strategy-development-text-2c'>
-                      Conduct a digital maturity assessment to identify areas
-                      for improvement.
-                      <br />
-                      Define a clear digital vision and roadmap aligned with
-                      business objectives
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-2d'>
-                  <div className='consulting-image-2e' />
-                  <div className='consulting-frame-2f'>
-                    <span className='consulting-process-automation'>
-                      Process Automation
-                    </span>
-                    <span className='consulting-process-automation-30'>
-                      Identify manual processes and automate them using software
-                      solutions.
-                      <br />
-                      Implement workflow management systems to streamline
-                      operations.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-31'>
-                  <div className='consulting-image-32' />
-                  <div className='consulting-frame-33'>
-                    <span className='consulting-cloud-infrastructure'>
-                      Cloud Infrastructure
-                    </span>
-                    <span className='consulting-cloud-infrastructure-34'>
-                      Migrate data and applications to cloud platforms (e.g.,
-                      AWS, Azure, Google Cloud).
-                      <br />
-                      Ensure scalability, security, and reliability.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='consulting-frame-35'>
-              <div className='consulting-frame-36'>
-                <div className='consulting-frame-37'>
-                  <div className='consulting-image-38' />
-                  <div className='consulting-frame-39'>
-                    <span className='consulting-data-analytics-visualization'>
-                      Data Analytics and Visualization
-                    </span>
-                    <span className='consulting-data-analytics-visualization-3a'>
-                      Implement data analytics tools (e.g., Tableau, Power BI)
-                      to gain insights.
-                      <br />
-                      Develop dashboards for real-time monitoring and
-                      decision-making.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-3b'>
-                  <div className='consulting-image-3c' />
-                  <div className='consulting-frame-3d'>
-                    <span className='consulting-employee-training-support'>
-                      Employee Training and Support
-                    </span>
-                    <span className='consulting-employee-training-support-3e'>
-                      Provide training on new digital tools and processes.
-                      <br />
-                      Offer ongoing support to ensure successful adoption.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h3>Diagnosis</h3>
+            <p>
+              We begin by conducting a thorough <br />
+              assessment of your business <br />
+              challenges and needs, identifying key <br />
+              areas for improvement.
+            </p>
           </div>
-          <div className='consulting-frame-3f'>
-            <div className='consulting-frame-40'>
-              <span className='consulting-software-solutions'>Software Solutions</span>
-              <div className='consulting-frame-41'>
-                <span className='consulting-software-solutions-42'>
-                  Customized software solutions can help automate processes,
-                  enhance productivity, and gain a competitive edge.
-                </span>
-              </div>
-              <span className='consulting-software-solutions-43'>
-                Aim: to develop customized software solutions to address
-                specific business needs and challenges. 
-              </span>
+
+          <div className="process-card">
+            <div className="process-icon">
+              <img src={process4} alt="" />
             </div>
-            <div className='consulting-frame-44'>
-              <div className='consulting-frame-45'>
-                <div className='consulting-frame-46'>
-                  <div className='consulting-image-47' />
-                  <div className='consulting-frame-48'>
-                    <span className='consulting-custom-software-development'>
-                      Custom Software Development
-                    </span>
-                    <span className='consulting-custom-software-development-49'>
-                      Develop tailored software solutions to automate processes,
-                      improve efficiency, and enhance customer experience.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-4a'>
-                  <div className='consulting-image-4b' />
-                  <div className='consulting-frame-4c'>
-                    <span className='consulting-mobile-app-development'>
-                      Mobile App Development
-                    </span>
-                    <span className='consulting-mobile-app-development-4d'>
-                      Create mobile applications to engage customers, improve
-                      sales, and enhance brand visibility.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-4e'>
-                  <div className='consulting-image-4f' />
-                  <div className='consulting-frame-50'>
-                    <span className='consulting-ai-ml-solutions'>
-                      Artificial Intelligence (AI) and Machine Learning (ML)
-                      Solutions
-                    </span>
-                    <span className='consulting-ai-ml-solutions-51'>
-                      Implement AI and ML to analyze data, predict trends, and
-                      optimize business decisions.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='consulting-frame-52'>
-              <div className='consulting-frame-53'>
-                <div className='consulting-frame-54'>
-                  <div className='consulting-image-55' />
-                  <div className='consulting-frame-56'>
-                    <span className='consulting-iot'>Internet of Things (IoT)</span>
-                    <span className='consulting-iot-57'>
-                      Develop IoT solutions to monitor and control devices,
-                      optimize processes, and improve efficiency.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-58'>
-                  <div className='consulting-image-59' />
-                  <div className='consulting-frame-5a'>
-                    <span className='consulting-data-analytics-visualization-5b'>
-                      Data Analytics and Visualization
-                    </span>
-                    <span className='consulting-data-analytics-visualization-5c'>
-                      Develop data analytics and visualization tools to gain
-                      insights, track performance, and inform business
-                      decisions.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-5d'>
-                  <div className='consulting-image-5e' />
-                  <div className='consulting-frame-5f'>
-                    <span className='consulting-cloud-based-software-solutions'>
-                      Cloud-Based Software Solutions
-                    </span>
-                    <span className='consulting-cloud-based-software-solutions-60'>
-                      Develop cloud-based software solutions to enhance
-                      collaboration, improve scalability, and reduce costs.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h3>Strategic Development</h3>
+            <p>
+              Our team crafts a tailored strategy, <br />
+              leveraging advanced AI, custom <br />
+              software solutions, and data analytics <br />
+              to address your specific requirements.
+            </p>
           </div>
-          <div className='consulting-frame-61'>
-            <span className='consulting-software'>Software</span>
-            <div className='consulting-frame-62'>
-              <div className='consulting-frame-63'>
-                <div className='consulting-frame-64'>
-                  <div className='consulting-image-65' />
-                  <div className='consulting-frame-66'>
-                    <span className='consulting-custom-made'>Custom Made</span>
-                    <span className='consulting-custom-made-67'>
-                      Tailor-made software solutions that meet your unique
-                      business needs. Our team utilizes cutting-edge
-                      technologies to deliver effiicient, scalable, and flexible
-                      applications.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-68'>
-                  <div className='consulting-image-69' />
-                  <div className='consulting-frame-6a'>
-                    <span className='consulting-e-commerce'>E-Commerce</span>
-                    <span className='consulting-e-commerce-6b'>
-                      Boost your online sales with our robust e-commerce
-                      plataforms. We offer everything from online storefronts to
-                      order management, ensuring a seamless shopping experience.
-                    </span>
-                  </div>
-                </div>
-              </div>
+
+          <div className="process-card">
+            <div className="process-icon">
+              <img src={process2} alt="" />
             </div>
-            <div className='consulting-frame-6c'>
-              <div className='consulting-frame-6d'>
-                <div className='consulting-frame-6e'>
-                  <div className='consulting-image-6f' />
-                  <div className='consulting-frame-70'>
-                    <span className='consulting-booking-app'>Booking App</span>
-                    <span className='consulting-booking-app-description'>
-                      Simplify booking processes with our versatile app designed
-                      for various industries. Enhance customer satisfaction with
-                      features like online booking, appointment management, and
-                      payment processing.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-71'>
-                  <div className='consulting-image-72' />
-                  <div className='consulting-frame-73'>
-                    <span className='consulting-lms'>
-                      LMS (Learning Management System)
-                    </span>
-                    <span className='consulting-lms-description'>
-                      Transform employee training with our comprehensive LMS.
-                      Manage courses, track progress, and issue certifications
-                      to boost skills and performance.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h3>Implementation</h3>
+            <p>
+              We seamlessly integrate our solutions <br />
+              into your existing <br />
+              infrastructure, ensuring minimal <br />
+              disruption and maximum efficiency.
+            </p>
           </div>
-          <div className='consulting-frame-74'>
-            <div className='consulting-frame-75'>
-              <span className='consulting-artificial-intelligence'>
-                Artificial Intelligence
-              </span>
-              <div className='consulting-ai-ml-solutions-76'>
-                <span className='consulting-frame-77'>
-                  Our AI and ML solutions help organizations optimize business
-                  processes, improve efficiency, and reduce costs.
-                </span>
-              </div>
+
+          <div className="process-card">
+            <div className="process-icon">
+              <img src={process1} alt="" />
             </div>
-            <div className='consulting-frame-78'>
-              <div className='consulting-frame-79'>
-                <div className='consulting-image-7a'>
-                  <div className='consulting-frame-7b' />
-                  <div className='consulting-process-automation-7c'>
-                    <span className='consulting-rpa-ml-automation'>
-                      Process Automation
-                    </span>
-                    <span className='consulting-frame-7d'>
-                      Automate repetitive tasks using Robotic Process Automation
-                      (RPA) and ML.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-image-7e'>
-                  <div className='consulting-frame-7f' />
-                  <div className='consulting-predictive-analytics'>
-                    <span className='consulting-forecasting-ml-algorithms'>
-                      Predictive Analytics
-                    </span>
-                    <span className='consulting-frame-80'>
-                       Forecast outcomes using statistical models and ML
-                      algorithms.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='consulting-frame-81'>
-              <div className='consulting-frame-82'>
-                <div className='consulting-image-83'>
-                  <div className='consulting-frame-84' />
-                  <div className='consulting-decision-support-systems'>
-                    <span className='consulting-ai-decision-tools'>
-                      Decision Support Systems
-                    </span>
-                    <span className='consulting-frame-85'>
-                      Develop AI-powered decision-making tools.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-image-86'>
-                  <div className='consulting-frame-87' />
-                  <div className='consulting-nlp'>
-                    <span className='consulting-language-analysis'>
-                      Natural Language Processing (NLP)
-                    </span>
-                    <span className='consulting-industry-applications'>
-                      Analyze and generate human language.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <span className='consulting-frame-88'>Industry Applications</span>
-            <div className='consulting-frame-89'>
-              <div className='consulting-frame-8a'>
-                <div className='consulting-frame-8b'>
-                  <div className='consulting-manufacturing'>
-                    <span className='consulting-maintenance-quality-optimization'>
-                      Manufacturing
-                    </span>
-                    <span className='consulting-frame-8c'>
-                      Predictive maintenance, quality control, and supply chain
-                      optimization.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-8d'>
-                  <div className='consulting-finance'>
-                    <span className='consulting-risk-fraud-portfolio'>Finance</span>
-                    <span className='consulting-frame-8e'>
-                      Risk management, fraud detection, and portfolio
-                      optimization.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-8f'>
-                  <div className='consulting-healthcare'>
-                    <span className='consulting-diagnosis-outcome-treatment'>
-                      Healthcare
-                    </span>
-                    <span className='consulting-frame-90'>
-                      Disease diagnosis, patient outcome prediction, and
-                      treatment optimization.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-91'>
-                  <div className='consulting-customer-service'>
-                    <span className='consulting-chatbots-sentiment-recommendations'>
-                      Customer Service
-                    </span>
-                    <span className='consulting-case-studies'>
-                      Chatbots, sentiment analysis, and personalized
-                      recommendations.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <span className='consulting-frame-92'>Case studies</span>
-            <div className='consulting-frame-93'>
-              <div className='consulting-frame-94'>
-                <div className='consulting-frame-95'>
-                  <div className='consulting-predictive-maintenance'>
-                    <span className='consulting-engine-failure-prediction'>
-                      Predictive Maintenance
-                    </span>
-                    <span className='consulting-frame-96'>
-                      An airline uses ML to predict engine failures, reducing
-                      downtime by 30%.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-97'>
-                  <div className='consulting-automated-customer-service'>
-                    <span className='consulting-chatbot-support-reduction'>
-                      Automated Customer Service
-                    </span>
-                    <span className='consulting-frame-98'>
-                      A retail company implements AI-powered chatbots, reducing
-                      support queries by 25%.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-99'>
-                  <div className='consulting-supply-chain-optimization'>
-                    <span className='consulting-route-optimization-fuel-consumption'>
-                      Supply Chain Optimization
-                    </span>
-                    <span className='consulting-text-57'>
-                      A logistics company uses ML to optimize routes, reducing
-                      fuel consumption by 15%.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-wrapper-1a'>
-                  <div className='consulting-frame-9a'>
-                    <span className='consulting-disease-diagnosis'>Disease Diagnosis</span>
-                    <span className='consulting-ai-powered-diagnosis'>
-                      A hospital uses AI-powered imaging analysis to diagnose
-                      cancer more accurately.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='consulting-frame-9b'>
-            <div className='consulting-frame-9c'>
-              <span className='consulting-data-management-engineering'>
-                Data Management & Engineering
-              </span>
-              <div className='consulting-frame-9d'>
-                <span className='consulting-data-analytics-tools'>
-                  Access to data analytics and business intelligence tools
-                  enables informed decision-making, helping companies navigate
-                  challenges and capitalize on opportunities.
-                </span>
-                <span className='consulting-data-services'>
-                  Our Data services enable organizations to make informed
-                  decisions by providing actionable insights from data.
-                </span>
-              </div>
-              <span className='consulting-implement-data-solutions'>
-                Aim: to implement solutions to collect, analyze, and visualize
-                data, enabling informed business decisions. 
-              </span>
-            </div>
-            <div className='consulting-frame-9e'>
-              <div className='consulting-frame-9f'>
-                <div className='consulting-frame-a0'>
-                  <span className='consulting-data-analytics-platforms'>
-                    Data Analytics Platforms
-                  </span>
-                  <span className='consulting-data-analytics-platforms-list'>
-                    Tableau
-                    <br />
-                    Power BI
-                    <br />
-                    QlikView
-                    <br />
-                    Google Data Studio
-                  </span>
-                </div>
-              </div>
-              <div className='consulting-frame-a1'>
-                <div className='consulting-frame-a2'>
-                  <span className='consulting-business-intelligence-tools'>
-                    Business Intelligence 
-                    <br />
-                    Tools
-                  </span>
-                  <span className='consulting-business-intelligence-tools-list'>
-                    SAP BusinessObjects
-                    <br />
-                    Oracle Business Intelligence
-                    <br />
-                    Microsoft Power BI
-                    <br />
-                    IBM Cognos
-                  </span>
-                </div>
-              </div>
-              <div className='consulting-frame-a3'>
-                <div className='consulting-frame-a4'>
-                  <span className='consulting-data-visualization-tools'>
-                    Data Visualization Tools
-                  </span>
-                  <span className='consulting-data-visualization-tools-list'>
-                    D3.js
-                    <br />
-                    Chart.js
-                    <br />
-                    Highcharts
-                    <br />
-                    FusionCharts
-                  </span>
-                </div>
-              </div>
-              <div className='consulting-frame-a5'>
-                <div className='consulting-frame-a6'>
-                  <span className='consulting-data-sources'>Data Sources</span>
-                  <span className='consulting-data-sources-list'>
-                    CRM data
-                    <br />
-                    ERP data
-                    <br />
-                    Social media data
-                    <br />
-                    Sensor data (IoT)
-                    <br />
-                    Customer feedback data
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className='consulting-frame-a7'>
-              <div className='consulting-frame-a8'>
-                <div className='consulting-frame-a9'>
-                  <div className='consulting-image-aa' />
-                  <div className='consulting-frame-ab'>
-                    <span className='consulting-data-integration'>Data Integration</span>
-                    <span className='consulting-gather-data-sources'>
-                      Gathering data from various sources (databases,
-                      spreadsheets, APIs).
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-ac'>
-                  <div className='consulting-image-ad' />
-                  <div className='consulting-frame-ae'>
-                    <span className='consulting-data-labeling'>Data Labeling </span>
-                    <span className='consulting-data-labeling-details'>
-                      High-quality labeling for text, audio, video, and image
-                      data to support AI and machine
-                      <br />
-                      Design and implement predictive models to learning
-                      projects. 
-                      <br />
-                      Ensure accuracy and optimize operations and automate
-                      decision- consistency in your datasets.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-af'>
-                  <div className='consulting-image-b0' />
-                  <div className='consulting-frame-b1'>
-                    <span className='consulting-data-processing'>Data Processing</span>
-                    <span className='consulting-clean-transform-data'>
-                      Clean, transform, and prepare your data for in-depth
-                      analysis. Improve data quality and enhance the accuracy of
-                      your insights.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='consulting-frame-b2'>
-              <div className='consulting-frame-b3'>
-                <div className='consulting-frame-b4'>
-                  <div className='consulting-image-b5' />
-                  <div className='consulting-frame-b6'>
-                    <span className='consulting-data-analysis'>Data Analysis</span>
-                    <span className='consulting-apply-statistical-models'>
-                      Applying statistical models, machine learning algorithms,
-                      and data visualization techniques.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-b7'>
-                  <div className='consulting-image-b8' />
-                  <div className='consulting-frame-b9'>
-                    <span className='consulting-data-visualization'>
-                      Data Visualization
-                    </span>
-                    <span className='consulting-create-dashboards-reports'>
-                      Creating interactive dashboards and reports.
-                    </span>
-                  </div>
-                </div>
-                <div className='consulting-frame-ba'>
-                  <div className='consulting-image-bb' />
-                  <div className='consulting-frame-bc'>
-                    <span className='consulting-insight-generation'>
-                      Insight Generation
-                    </span>
-                    <span className='consulting-identify-trends-patterns'>
-                      Identifying trends, patterns, and correlations.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='consulting-group-bd' />
-        <div className='consulting-group-be' />
-        <div className='consulting-group-bf' />
-        <div className='consulting-group-c0' />
-      </div>
-      <div className='consulting-group-c1' />
-      <div className='consulting-image-c2' />
-      <div className='consulting-rectangle-c3'>
-        <span className='consulting-business-management-software'>
-          Business Management Software
-        </span>
-        <span className='consulting-apex-solution'>
-          APEX is a comprehesive solution with modules for project management,
-          procurement, finance, CRM, HR, inventory, and e-commerce. Streamline
-          your operations and improve efficiency with our all-in-one software.
-        </span>
-      </div>
-      <div className='consulting-frame-c4'>
-        <div className='consulting-frame-c5'>
-          <div className='consulting-frame-c6'>
-            <div className='consulting-image-c7' />
-            <div className='consulting-frame-c8'>
-              <span className='consulting-project-management'>Project Management</span>
-              <span className='consulting-plan-execute-monitor'>
-                Plan execute and monitor projects effectively.
-              </span>
-            </div>
-          </div>
-          <div className='consulting-frame-c9'>
-            <div className='consulting-image-ca' />
-            <div className='consulting-frame-cb'>
-              <span className='consulting-procurement'>Procurement</span>
-              <span className='consulting-automate-purchasing-process'>
-                Streamline and automate the purchasing process.
-              </span>
-            </div>
-          </div>
-          <div className='consulting-frame-cc'>
-            <div className='consulting-image-cd' />
-            <div className='consulting-frame-ce'>
-              <span className='consulting-financial-management-accounting'>
-                Financial Management and Accounting
-              </span>
-              <span className='consulting-track-financial-transactions'>
-                Track financial transactions, budgeting, invoicing, and
-                reporting.
-              </span>
-            </div>
-          </div>
-          <div className='consulting-frame-cf'>
-            <div className='consulting-image-d0' />
-            <div className='consulting-frame-d1'>
-              <span className='consulting-hrm'>HRM</span>
-              <span className='consulting-automate-hr-processes'>
-                Automate HR processes including payroll, attendance, and
-                performance evalution.
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className='consulting-frame-d2'>
-          <div className='consulting-frame-d3'>
-            <div className='consulting-image-d4' />
-            <div className='consulting-frame-d5'>
-              <span className='consulting-crm'>CRM</span>
-              <span className='consulting-manage-customer-interactions'>
-                Manage customer interactions, track leads, and streamline sales
-                processes.
-              </span>
-            </div>
-          </div>
-          <div className='consulting-frame-d6'>
-            <div className='consulting-image-d7' />
-            <div className='consulting-frame-d8'>
-              <span className='consulting-inventory'>Inventory</span>
-              <span className='consulting-optimize-inventory-levels'>
-                Optimize inventory levels, track stock movements, and ensure
-                accurate forecasting.
-              </span>
-            </div>
-          </div>
-          <div className='consulting-frame-d9'>
-            <div className='consulting-image-da' />
-            <div className='consulting-frame-db'>
-              <span className='consulting-e-commerce-dc'>E- Commerce</span>
-              <span className='consulting-manage-online-stores'>
-                Manage online stores, streamline order processing, inventory
-                managment, and customer support.
-              </span>
-            </div>
+            <h3>Optimization</h3>
+            <p>
+              Continuous monitoring and feedback help <br />
+              us refine and optimize our <br />
+              solutions, ensuring sustained growth <br />
+              and improved performance for your company.
+            </p>
           </div>
         </div>
       </div>
-      <div className='consulting-rectangle-dd'>
-        <div className='consulting-flex-column-e'>
-          <div className='consulting-darat-arabe' />
-          <div className='consulting-frame-de'>
-            <div className='consulting-instagram-svg'>
-              <div className='consulting-instagram-svg-fill'>
-                <div className='consulting-instagram-svg-df'>
-                  <div className='consulting-group-e0'>
-                    <div className='consulting-group-e1'>
-                      <div className='consulting-group-e2'>
-                        <div className='consulting-group-e3'>
-                          <div className='consulting-vector' />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
+      <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+        <img className="electro-image-2 absolute right-0" src={group} alt="" />
+        <h2 className="digital-transformation mt-16 font-bold mb-4">
+          Digital Transformation
+        </h2>
+        <p className="mb-2 digital-transformation-des">
+          Digitalization is key for companies to stay afloat and thrive. They
+          require assistance in adopting digital technologies to streamline
+          operations and expand their customer base.
+        </p>
+        <p className="font-semibold digital-transformation-des mb-6">
+          Aim: Integrate digital technologies into SME operations, processes,
+          and culture.
+        </p>
+        {/* Desktop grid view */}
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {cards.map((solution, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div
+                className="p-4"
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+                <p className="text-gray-600">{solution.description}</p>
               </div>
             </div>
-            <div className='consulting-tiktok-svg'>
-              <div className='consulting-tiktok-svg-fill'>
-                <div className='consulting-tiktok-svg-e4'>
-                  <div className='consulting-group-e5'>
-                    <div className='consulting-vector-e6' />
-                  </div>
+          ))}
+        </div>
+
+        {/* Mobile view slider */}
+        <div className="md:hidden">
+          <Slider {...sliderSettings}>
+            {cards.map((solution, index) => (
+              <div
+                key={index}
+                className={`slider-card ${
+                  index === 0 ? "center-card" : "side-card"
+                }`}
+              >
+                <img
+                  src={solution.imageUrl}
+                  alt={solution.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div
+                  className="p-4"
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  <h3 className="text-sm font-semibold mb-1">
+                    {solution.title}
+                  </h3>
+                  <p
+                    style={{ display: "none" }}
+                    className="text-gray-600 text-sm"
+                  >
+                    {solution.description}
+                  </p>
                 </div>
               </div>
-            </div>
-            <div className='consulting-linkedin-svg'>
-              <div className='consulting-linkedin-svg-fill'>
-                <div className='consulting-linkedin-svg-e7'>
-                  <div className='consulting-group-e8'>
-                    <div className='consulting-group-e9'>
-                      <div className='consulting-vector-ea' />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='consulting-group-eb' />
-          <div className='consulting-group-ec' />
-          <div className='consulting-group-ed' />
-          <div className='consulting-group-ee' />
-          <div className='consulting-vector-ef' />
-          <div className='consulting-group-f0' />
+            ))}
+          </Slider>
         </div>
-        <div className='consulting-flex-column-f'>
-          <span className='consulting-darat-saudi-based-corporation'>
-            DARAT is a saudi-based corporation dedicated to the Saudi 2030
-            vision, offering various integrated solutions that encompass
-            top-tier services and high end products.
-          </span>
-          <span className='consulting-darat-contracting-company'>
-            © 2024 Darat Contracting Company
-          </span>
-          <div className='consulting-group-f1' />
-          <div className='consulting-group-f2' />
-        </div>
-        <div className='consulting-flex-column-cfe'>
-          <div className='consulting-group-f3' />
-          <div className='consulting-group-f4' />
-        </div>
-        <a href="#consulting-section">
-  <div className='consulting-vector-f5' />
-</a>
       </div>
-    
-    </div>
+      <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+        <img className="electro-image-2 absolute right-0" src={group} alt="" />
+        <h2 className="digital-transformation font-bold mb-4">
+          Software Solutions
+        </h2>
+        <p className="mb-2 digital-transformation-des">
+          Customized software solutions can help automate processes, enhance
+          productivity, and gain a competitive edge.
+        </p>
+        <p className="font-semibold digital-transformation-des mb-6">
+          Aim: to develop customized software solutions to address specific
+          business needs and challenges.
+        </p>
+
+        {/* Desktop grid view */}
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {solutions.map((solution, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div
+                className="p-4"
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+                <p className="text-gray-600">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile view slider */}
+        <div className="md:hidden">
+          <Slider {...sliderSettings}>
+            {solutions.map((solution, index) => (
+              <div
+                key={index}
+                className={`slider-card ${
+                  index === 0 ? "center-card" : "side-card"
+                }`}
+              >
+                <img
+                  src={solution.imageUrl}
+                  alt={solution.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div
+                  className="p-4"
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  <h3 className="text-sm font-semibold mb-1">
+                    {solution.title}
+                  </h3>
+                  <p
+                    style={{ display: "none" }}
+                    className="text-gray-600 text-sm"
+                  >
+                    {solution.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+        <img className="electro-image-2 absolute right-0" src={group} alt="" />
+        <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+          Software
+        </h2>
+
+        {/* Desktop grid view */}
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+          {softwareSolutions.map((solution, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div
+                className="p-4"
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+                <p className="text-gray-600">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile view slider */}
+        <div className="md:hidden">
+          <Slider {...sliderSettings}>
+            {softwareSolutions.map((solution, index) => (
+              <div
+                key={index}
+                className={`slider-card ${
+                  index === 0 ? "center-card" : "side-card"
+                }`}
+              >
+                <img
+                  src={solution.imageUrl}
+                  alt={solution.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div
+                  className="p-4"
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  <h3 className="text-sm font-semibold mb-1">
+                    {solution.title}
+                  </h3>
+                  <p
+                    style={{ display: "none" }}
+                    className="text-gray-600 text-sm"
+                  >
+                    {solution.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+        <img className="electro-image-2 absolute right-0" src={group} alt="" />
+        <h2 className="software-text font-bold mb-4">
+          Artificial Intelligence
+        </h2>
+        <p className="mb-4 digital-transformation-des">
+          Our AI and ML solutions help organizations optimize business
+          processes, improve efficiency, and reduce costs.
+        </p>
+
+        {/* Desktop grid view */}
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+          {aiSolutions.map((solution, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div
+                className="p-4"
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+                <p className="text-gray-600">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile view slider */}
+        <div className="md:hidden">
+          <Slider {...sliderSettings}>
+            {aiSolutions.map((solution, index) => (
+              <div
+                key={index}
+                className={`slider-card ${
+                  index === 0 ? "center-card" : "side-card"
+                }`}
+              >
+                <img
+                  src={solution.imageUrl}
+                  alt={solution.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div
+                  className="p-4"
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  <h3 className="text-sm font-semibold mb-1">
+                    {solution.title}
+                  </h3>
+                  <p
+                    style={{ display: "none" }}
+                    className="text-gray-600 text-sm"
+                  >
+                    {solution.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+      <div className="app-container container">
+        <section className="industry-section">
+          <h2 className="section-title">Industry Applications</h2>
+          <div className="card-grid">
+            <Card
+              title="Manufacturing"
+              content="Predictive maintenance, quality control, and supply chain optimization."
+            />
+            <Card
+              title="Finance"
+              content="Risk management, fraud detection, and portfolio optimization."
+            />
+            <Card
+              title="Healthcare"
+              content="Disease diagnosis, patient outcome prediction, and treatment optimization."
+            />
+            <Card
+              title="Customer Service"
+              content="Chatbots, sentiment analysis, and personalized recommendations."
+            />
+          </div>
+        </section>
+
+        <section className="case-study-section">
+          <h2 className="section-title">Case Studies</h2>
+          <div className="card-grid">
+            <Card
+              title="Predictive Maintenance"
+              content="An airline uses ML to predict engine failures, reducing downtime by 30%."
+            />
+            <Card
+              title="Automated Customer Service"
+              content="A retail company implements AI-powered chatbots, reducing support queries by 25%."
+            />
+            <Card
+              title="Supply Chain Optimization"
+              content="A logistics company uses ML to optimize routes, reducing fuel consumption by 15%."
+            />
+            <Card
+              title="Disease Diagnosis"
+              content="A hospital uses AI-powered imaging analysis to diagnose cancer more accurately."
+            />
+          </div>
+        </section>
+      </div>
+      <div className="data-management container">
+        <img
+          className="electro-image-22"
+          style={{ position: "absolute", right: "0" }}
+          src={group}
+          alt=""
+        />
+        <h2 className="data-management-title">Data Management & Engineering</h2>
+        <p className="data-management-description">
+          Access to data analytics and business intelligence tools enables
+          informed decision-making, helping companies navigate challenges and
+          capitalize on opportunities.
+        </p>
+        <p className="data-management-description">
+          Our Data services enable organizations to make informed decisions by
+          providing actionable insights from data.
+        </p>
+        <p className="data-management-aim">
+          <strong>Aim:</strong> to implement solutions to collect, analyze, and
+          visualize data, enabling informed business decisions.
+        </p>
+
+        <div className="data-management-cards">
+          <Cards
+            title="Data Analytics Platforms"
+            items={["Tableau", "Power BI", "QlikView", "Google Data Studio"]}
+          />
+          <Cards
+            title="Business Intelligence Tools"
+            items={[
+              "SAP BusinessObjects",
+              "Oracle Business Intelligence",
+              "Microsoft Power BI",
+              "IBM Cognos",
+            ]}
+          />
+          <Cards
+            title="Data Visualization Tools"
+            items={["D3.js", "Chart.js", "Highcharts", "FusionCharts"]}
+          />
+          <Cards
+            title="Data Sources"
+            items={[
+              "CRM data",
+              "ERP data",
+              "Social media data",
+              "Sensor data (IoT)",
+              "Customer feedback data",
+            ]}
+          />
+        </div>
+      </div>
+      <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+        <img className="electro-image-2 absolute right-0" src={group} alt="" />
+        <h2 className="digital-transformation font-bold mb-4">
+          Data Management & Engineering
+        </h2>
+        <p className="mb-2 digital-transformation-des">
+          Access to data analytics and business intelligence tools enables
+          informed decision-making, helping companies navigate challenges and
+          capitalize on opportunities.
+        </p>
+        <p className="font-semibold digital-transformation-des mb-6">
+          Aim: to implement solutions to collect, analyze, and visualize data,
+          enabling informed business decisions.
+        </p>
+
+        {/* Desktop grid view */}
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {lastsolutions.map((solution, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div
+                className="p-4"
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+                <p className="text-gray-600">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile view slider */}
+        <div className="md:hidden">
+          <Slider {...sliderSettings}>
+            {lastsolutions.map((solution, index) => (
+              <div
+                key={index}
+                className={`slider-card ${
+                  index === 0 ? "center-card" : "side-card"
+                }`}
+              >
+                <img
+                  src={solution.imageUrl}
+                  alt={solution.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div
+                  className="p-4"
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  <h3 className="text-sm font-semibold mb-1">
+                    {solution.title}
+                  </h3>
+                  <p
+                    style={{ display: "none" }}
+                    className="text-gray-600 text-sm"
+                  >
+                    {solution.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+
+      <div className="apex-container">
+        <img
+          className="electro-image-3"
+          style={{ position: "absolute", left: "-30px" }}
+          src={image2}
+          alt=""
+        />
+        <header className="apex-header">
+          <div className="apex-logo">
+            <img src={apex} alt="APEX Logo" className="apex-logo-img" />{" "}
+            {/* Replace 'logo.png' with the actual path */}
+            {/* <h1 className="apex-tagline">APEX</h1>
+          <p className="apex-sub-tagline">INTEGRATE, SUCCEED</p> */}
+          </div>
+        </header>
+        <main className="apex-main-content">
+          <img src={apex2} alt="APEX Logo" className="apex-logo-img-1" />
+          <h2 className="apex-title">Business Management Software</h2>
+          <p className="apex-description">
+            APEX is a comprehensive solution with modules for project
+            management, procurement, finance, CRM, HR, inventory, and
+            e-commerce. Streamline your operations and improve efficiency with
+            our all-in-one software.
+          </p>
+        </main>
+            
+      </div>
+      <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+        <img className="electro-image-2 absolute right-0" src={group} alt="" />
+
+        {/* Desktop grid view */}
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {lastcards.map((solution, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div
+                className="p-4"
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+                <p className="text-gray-600">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile view slider */}
+        <div className="md:hidden">
+          <Slider {...sliderSettings}>
+            {lastcards.map((solution, index) => (
+              <div
+                key={index}
+                className={`slider-card ${
+                  index === 0 ? "center-card" : "side-card"
+                }`}
+              >
+                <img
+                  src={solution.imageUrl}
+                  alt={solution.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div
+                  className="p-4"
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  <h3 className="text-sm font-semibold mb-1">
+                    {solution.title}
+                  </h3>
+                  <p
+                    style={{ display: "none" }}
+                    className="text-gray-600 text-sm"
+                  >
+                    {solution.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+    </>
   );
-}
+};
+
+export default Consulting;

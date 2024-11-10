@@ -38,25 +38,37 @@
   .frame-6.menu-open {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #ffffff;
-    padding: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    position: fixed; /* Use fixed for full-screen coverage */
+    top: 115px;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: black;
+    padding: 20px;
+    z-index: 1000; /* Make sure it covers everything else */
   }
   
   .frame-7, .about-us, .proyects, .contact-us {
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 29px;
     font-family: 'Area Normal Trial', sans-serif;
-    font-size: 14px;
+    font-size: 18px; /* Slightly larger font for better visibility */
     font-weight: 800;
-    color: #000;
+    color: black;
     text-decoration: none;
   }
+
+  .header-image, .header-image-1{
+    display: none;
+  }
+  
+
+  
+  .no-scroll {
+    overflow: hidden;
+  }
+  
 
   .group-8 {
     flex-shrink: 0;
@@ -68,6 +80,17 @@
     background-size: 100% 100%;
     z-index: 437;
   }
+
+  .header-image{
+    width: 70% ;
+    transform: rotate(-90deg);
+  }
+
+  .header-image-1{
+    width: 70% ;
+    transform: rotate(90deg);
+  }
+  
   
   .selected {
     border: 1px solid black;
@@ -78,6 +101,9 @@
       display: block;
     }
 
+    .header-image, .header-image-1{
+      display: block !important;
+    }
     .frame{
         margin: 36px 0 0 0 !important;
     }
@@ -87,8 +113,23 @@
     }
   
     .frame-6.menu-open {
-      display: flex; /* Show when open */
+      display: flex; 
+      align-items: flex-start; /* Show when open */
     }
+    .social{
+      display: block !important;
+    }
+    .frame-7, .about-us, .proyects, .contact-us {
+      cursor: pointer;
+      padding: 15px 20px;
+      border-radius: 29px;
+      font-family: 'Area Normal Trial', sans-serif;
+      font-size: 18px; /* Slightly larger font for better visibility */
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+    }
+    
   }
   
   @media (min-width: 769px) {
@@ -96,4 +137,6 @@
       display: flex; /* Display the header links in a row on desktop */
       gap: 20px; /* Add spacing between menu items */
     }
+   
+    
   }

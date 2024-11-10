@@ -1,300 +1,265 @@
 import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './Electromachanical.css';
+import group from '../assets/images/Group 145.png'
+import group2 from '../assets/images/Group 146.png'
+import { FaInstagram } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
+import logo from '../assets/images/logo (2).png'
 
-export default function Electromachanical() {
+import background from '../assets/images/electro.png'
+ // Import custom CSS for blurring effect
+import ecard1 from '../assets/images/ecard1.png' 
+import ecard2 from '../assets/images/ecard2.png' 
+import ecard3 from '../assets/images/ecard3.png' 
+import ecard4 from '../assets/images/ecard4.png' 
+import ecard5 from '../assets/images/ecard5.png' 
+import ecard11 from '../assets/images/ecard11.png' 
+import ecard22 from '../assets/images/ecard22.png' 
+import ecard33 from '../assets/images/ecard33.png' 
+import ecard44 from '../assets/images/ecard44.png' 
+import ecard55 from '../assets/images/ecard55.png' 
+
+
+
+const Electromachanical = () => {
+  const Solutions = [
+    {
+      title: 'Private Power Agreement - PPAs',
+      description: 'A long-term contract for purchasing electricity between a power provider and a customer.',
+      imageUrl: ecard1, // Replace with actual image path
+    },
+    {
+      title: 'Electrical Infrastructure Planning',
+      description: 'Strategic development of electrical systems to meet current and future energy needs.',
+      imageUrl: ecard2, // Replace with actual image path
+    },
+    {
+      title: 'Electrical Studies',
+      description: 'Analytical assessments of electrical systems to ensure safety, reliability, and efficiency.',
+      imageUrl: ecard3, // Replace with actual image path
+    },
+    {
+      title: 'Substation Design',
+      description: 'Engineering and planning of electrical substations to manage and distribute power efficiently.',
+      imageUrl: ecard4, // Replace with actual image path
+    },
+    {
+      title: 'Transmission Lines Design',
+      description: 'Design of overhead or underground lines to efficiently deliver energy over long distances.',
+      imageUrl: ecard5, // Replace with actual image path
+    },
+  ];
+
+  const servicesOffered = [
+    {
+      title: "Control Systems for Machines and Processes with PLC / SCADA Technology",
+      imageUrl: ecard55, // Replace with actual image paths
+    },
+    {
+      title: "Distributed Control Systems (DCS) for Process Automation",
+      imageUrl: ecard11,
+    },
+    {
+      title: "Remote Supervision and Control (Telecontrol)",
+      imageUrl: ecard22,
+    },
+    {
+      title: "Energy Management Systems with Supervision Software",
+      imageUrl: ecard33,
+    },
+    {
+      title: "Motor Control Center (MCC) with Relays, Softstarters, and Variators",
+      imageUrl: ecard44,
+    },
+  ];
+  
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1, // Show one main slide at a time
+    centerMode: true, // Center the slide
+    centerPadding: '0', // Adjust padding to show partial slides on both sides
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '25%', // Show partial slides on mobile
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '20%', // Narrower padding for smaller screens
+        },
+      },
+    ],
+  };
+
+
   return (
-    <div  id="electro-section" className='electro-main-container'>
-      <div className='electro-rectangle'>
-        <div className='electro-frame'>
-          <div className='electro-clip-path-group'>
-            <div className='electro-group'>
-              <div className='electro-clip-path-group-1'>
-                <div className='electro-group-2'>
-                  <div className='electro-clip-path-group-3'>
-                    <div className='electro-group-4'>
-                      <div className='electro-rectangle-5' />
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <>
+     <main className="relative bg-cover bg-center "  style={{ backgroundImage: `url(${background})` ,    opacity: '0.9' , height:'125vh'}}>
+    <img className='electro-image' style={{position:'absolute', right:'0'}} src={group} alt="" />
+    <img className='electro-image-1' style={{position:'absolute', left:'0', bottom:'0'}} src={group} alt="" />
+      <div  className="absolute inset-0 bg-black opacity-50"></div>
+      <div style={{position :'absolute', bottom:'40px'}} className="relative electro-heading z-10 text-white p-4 md:p-16 lg:p-16 text-left">
+        <h1 style={{fontSize:'35px'}} className="electro-title font-bold">Electromechanical, energy and automation</h1>
+        <p style={{fontSize:'48px'}}  className="mt-4 electro-des italic align-left">
+        Powering innovation where <br /> precision meets performance.
+        </p>
+       
+      </div>
+    </main>  
+    <div className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <img
+        className="electro-image-2 absolute right-0"
+        src={group}
+        alt=""
+      />
+      <h2 className="text-3xl service-solution md:mt-16 font-bold mb-8">
+        Energy Solutions
+      </h2>
+
+      {/* Desktop grid view */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {Solutions.map((solution, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <img
+              src={solution.imageUrl}
+              alt={solution.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p className="text-gray-600">{solution.description}</p>
             </div>
           </div>
-          <div className='electro-frame-6'>
-            <button className='electro-button'>
-              <span className='electro-span'>SERVICES</span>
-            </button>
-            <span className='electro-span-7'>ABOUT US</span>
-            <span className='electro-span-8'>PROYECTS</span>
-            <span className='electro-span-9'>CONTACT US</span>
-          </div>
-          <div className='electro-group-a' />
+        ))}
+      </div>
+
+      {/* Mobile view slider */}
+      <div className="md:hidden">
+        <Slider {...sliderSettings}>
+          {Solutions.map((solution, index) => (
+            <div
+              key={index}
+              className={`slider-card ${index === 0 ? 'center-card' : 'side-card'}`} >
+              <img
+                src={solution.imageUrl}
+                alt={solution.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-sm font-semibold mb-1">{solution.title}</h3>
+                <p style={{display:'none'}} className="text-gray-600 text-sm">{solution.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>  
+
+      <div className="container mx-auto py-12 px-4">
+      <img className='electro-image-3' style={{display:'none'}} src={group2} alt="" />
+        <h2 className="text-3xl service-solution font-bold mb-2">Industrial Automation and Process Control</h2>
+        <p className="text-lg mb-6">Services Offered</p>
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {servicesOffered.map((service, index) => (
+            <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <img src={service.imageUrl} alt={service.title} className="w-full h-40 object-cover" />
+              <div className="p-4">
+                <p className="text-sm font-medium">{service.title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile view slider */}
+        <div className="md:hidden">
+          <Slider {...sliderSettings}>
+            {servicesOffered.map((service, index) => (
+              <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src={service.imageUrl} alt={service.title} className="w-full h-40 object-cover" />
+                <div className="p-4">
+                  <p className="text-sm font-medium">{service.title}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
-      <div className='electro-mask-group' />
-      <div className='electro--hd-fps' />
-      <div className='electro-group-b' />
-      <span className='electro-span-c'> Electromechanical, energy and automation</span>
-      <span className='electro-span-d'>
-        Powering innovation where precision meets performance.
-      </span>
-      <span className='electro-span-e'>
-        Home > Services > Electromechanical, energy and automation
-      </span>
-      <div className='electro-flex-row-cd'>
-        <div className='electro-group-f' />
-        <span className='electro-span-10'>Energy solutions</span>
-      </div>
-      <div className='electro-frame-11'>
-        <div className='electro-frame-12'>
-          <div className='electro-image' />
-          <div className='electro-frame-13'>
-            <span className='electro-private-power-agreement'>
-              Private Power Agreement - PPA’s
-            </span>
-            <span className='electro-long-term-contract'>
-              A long-term contract for purchasing electricity between a power
-              provider and a customer.
-            </span>
-          </div>
-        </div>
-        <div className='electro-frame-14'>
-          <div className='electro-image-15' />
-          <div className='electro-frame-16'>
-            <span className='electro-electrical-infrastructure-planning'>
-              Electrical Infrastructure Planning
-            </span>
-            <span className='electro-strategic-development'>
-              Strategic development of electrical systems to meet current and
-              future energy needs.
-            </span>
-          </div>
-        </div>
-        <div className='electro-frame-17'>
-          <div className='electro-image-18' />
-          <div className='electro-frame-19'>
-            <span className='electro-electrical-studies'>Electrical Studies</span>
-            <span className='electro-analytical-assessments'>
-              Analytical assessments of electrical systems to ensure safety,
-              reliability, and efficiency.
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className='electro-frame-1a'>
-        <div className='electro-frame-1b'>
-          <div className='electro-image-1c' />
-          <div className='electro-frame-1d'>
-            <span className='electro-subestation-design'>Subestation Desing</span>
-            <span className='electro-engineering-planning'>
-              Engineering and planning of electrical substations to manage and
-              distribute power effectively.
-            </span>
-          </div>
-        </div>
-        <div className='electro-frame-1e'>
-          <div className='electro-image-1f' />
-          <div className='electro-frame-20'>
-            <span className='electro-transmission-lines-design'>
-              Transmission Lines Design
-            </span>
-            <span className='electro-design-overhead-underground'>
-              Design of overhead or underground lines to effiiciently over long
-              distances.
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className='electro-industrial-automation-process-control' />
-      <span className='electro-services-offered'>
-        Industrial Automation and Process Control
-      </span>
-      <span className='electro-flex-row-d'>Services offered</span>
-      <div className='electro-frame-21'>
-        <div className='electro-box-9'>
-          <div className='electro-frame-22'>
-            <div className='electro-image-23' />
-            <span className='electro-control-systems'>
-              Control Systems for Machines and Processes with PLC / SCADA
-              Technology
-            </span>
-          </div>
-        </div>
-        <div className='electro-frame-24'>
-          <div className='electro-frame-25'>
-            <div className='electro-image-26' />
-            <span className='electro-distributed-control-systems'>
-              Distributed Control Systems (DCS) for Process Automation
-            </span>
-          </div>
-        </div>
-        <div className='electro-frame-27'>
-          <div className='electro-frame-28'>
-            <div className='electro-image-29' />
-            <span className='electro-remote-supervision-control'>
-              Remote Supervision and Control (Telecontrol)
-            </span>
-          </div>
-        </div>
-        <div className='electro-frame-2a'>
-          <div className='electro-frame-2b'>
-            <div className='electro-image-2c' />
-            <span className='electro-energy-management-systems'>
-              Energy Management Systems with Supervision Software
-            </span>
-          </div>
-        </div>
-        <div className='electro-frame-2d'>
-          <div className='electro-frame-2e'>
-            <div className='electro-image-2f' />
-            <span className='electro-motor-control-center'>
-              Motor Control Center (MCC) with Relays, Softstarter’s and
-              Variators
-            </span>
-          </div>
-        </div>
-      </div>
-      <span className='electro-solutions-gearless-mill-drive'>
+    <div className="container mx-auto py-12 px-4">
+    <img className='electro-image-2' style={{position:'absolute', right:'0'}} src={group} alt="" />
+      <h2 className="md:text-3xl md:mt-20 service-solution font-bold mb-6">
         Solutions for Gearless Mill Drive Motors (GMD’s)
-      </span>
-      <div className='electro-frame-30'>
-        <div className='electro-frame-31'>
-          <span className='electro-quality-control-management'>
-            Quality Control Managment
-          </span>
-          <div className='electro-frame-32'>
-            <span className='electro-establishment-validation-criteria'>
-              Establishment and/or validation of critearia and standards for the
-              design, manufacture, installation and maintenance of GMD systems
-              for mill drives, installation, operation and maintenance of GMD
-              systems for drives.
-            </span>
-            <span className='electro-elaboration-review-supervision'>
-              Elaboration, review and supervision of the QA/QC plan,
-              pre-commissioning and commissioning.
-            </span>
-          </div>
+      </h2>
+      
+      <div className="space-y-8">
+        <div>
+          <h3 className="text-xl service-solution-heading font-semibold mb-2">Quality Control Management</h3>
+          <ul className="list-disc service-solution-description list-inside space-y-1">
+            <li>Establishment and/or validation of criteria and standards for the design, manufacture, installation and maintenance of GMD systems for mill drives, installation, operation and maintenance of GMD systems for drives.</li>
+            <li>Elaboration, review and supervision of the QA/QC plan, pre-commissioning and commissioning.</li>
+          </ul>
         </div>
-        <div className='electro-frame-33'>
-          <span className='electro-specialized-technical-support'>
-            Specialized Technical Support for Procure and Logistic
-          </span>
-          <div className='electro-frame-34'>
-            <span className='electro-comparative-analysis'>
-              Comparative analysis of Gearless Mil Drive technogies for purchase
-              decision.
-            </span>
-            <span className='electro-comparative-analysis-35'>
-              Comparative analysis of GMD technologies for purchase decision and
-              elaboraboration of bidder qualification matrix.
-            </span>
-            <span className='electro-conformity-check'>
-              Conformity of componts, special tools and materials prior to
-              packing release.
-            </span>
-          </div>
+
+        <div>
+          <h3 className="text-xl service-solution-heading font-semibold mb-2">Specialized Technical Support for Procure and Logistic</h3>
+          <ul className="list-disc service-solution-description list-inside space-y-1">
+            <li>Comparative analysis of Gearless Mill Drive technologies for purchase decision.</li>
+            <li>Comparative analysis of GMD technologies for purchase decision and elaboration of bidder qualification matrix.</li>
+            <li>Conformity of components, special tools and materials prior to packing release.</li>
+          </ul>
         </div>
-        <div className='electro-frame-36'>
-          <span className='electro-installation-testing-startup'>
-            Installation, Testing and Start-up
-          </span>
-          <div className='electro-frame-37'>
-            <span className='electro-project-execution-plan'>
-              Preparation, review and supervison of the Project Execution Plan.
-            </span>
-            <span className='electro-transportation-handling'>
-              Planning and supervision during transportation and handling of
-              main component of GMD type engines.
-            </span>
-          </div>
+
+        <div>
+          <h3 className="text-xl service-solution-heading font-semibold mb-2">Installation, Testing and Start-up</h3>
+          <ul className="list-disc service-solution-description list-inside space-y-1">
+            <li>Preparation, review and supervision of the Project Execution Plan.</li>
+            <li>Planning and supervision during transportation and handling of main component of GMD type engines.</li>
+          </ul>
         </div>
-        <div className='electro-frame-38'>
-          <span className='electro-maintenance'>Maintenance</span>
-          <div className='electro-frame-39'>
-            <span className='electro-maintenance-strategy'>
-              Maintenance strategy for critical inspections and monitoring
-              conditions (winding diagnostics, partial discharge test, etc).
-            </span>
-            <div className='electro-failure-risk-assessment'>
-              <span className='electro-failure-risk-assessment-3a'>
-                Premature failure risk assessment:
-              </span>
-              <span className='electro-recommended-controls'>
-                
-                recommended controls, protection and monitoring of controls,
-                protection and monitoring of operational conditions.
-              </span>
-            </div>
-          </div>
+
+        <div>
+          <h3 className="text-xl service-solution-heading font-semibold mb-2">Maintenance</h3>
+          <ul className="list-disc service-solution-description list-inside space-y-1">
+            <li>Maintenance strategy for critical inspections and monitoring conditions (winding diagnostics, partial discharge test, etc).</li>
+            <li>Premature failure risk assessment: recommended controls, protection and monitoring of controls, protection and monitoring of operational conditions.</li>
+          </ul>
         </div>
       </div>
-      <div className='electro-rectangle-3b'>
-        <div className='electro-flex-column-e'>
-          <span className='electro-darat-solutions'>
-            DARAT is a saudi-based corporation dedicated to the Saudi 2030
-            vision, offering various integrated solutions that encompass
-            top-tier services and high end products.
-          </span>
-          <span className='electro-darat-copyright'>
-            © 2024 Darat Contracting Company
-          </span>
-          <div className='electro-group-3c' />
-          <div className='electro-group-3d' />
-        </div>
-        <div className='electro-flex-column-c'>
-          <div className='electro-darat-arabe' />
-          <div className='electro-frame-3e'>
-            <div className='electro-instagram-svg'>
-              <div className='electro-instagram-svg-fill'>
-                <div className='electro-instagram-svg-3f'>
-                  <div className='electro-group-40'>
-                    <div className='electro-group-41'>
-                      <div className='electro-group-42'>
-                        <div className='electro-group-43'>
-                          <div className='electro-vector' />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='electro-tiktok-svg'>
-              <div className='electro-tiktok-svg-fill'>
-                <div className='electro-tiktok-svg-44'>
-                  <div className='electro-group-45'>
-                    <div className='electro-vector-46' />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='electro-linkedin-svg'>
-              <div className='electro-linkedin-svg-fill'>
-                <div className='electro-linkedin-svg-47'>
-                  <div className='electro-group-48'>
-                    <div className='electro-group-49'>
-                      <div className='electro-vector-4a' />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='electro-group-4b' />
-          <div className='electro-group-4c' />
-          <div className='electro-group-4d' />
-          <div className='electro-group-4e' />
-          <div className='electro-vector-4f' />
-          <div className='electro-group-50' />
-        </div>
-        <div className='electro-flex-column-dfc'>
-          <div className='electro-group-51' />
-          <div className='electro-group-52' />
-        </div>
-        <a href="#electro-section">
-  <div className='electro-vector-53' />
-</a>
-      </div>
-    
     </div>
+    <div className="banner">
+    
+      <div className="content">
+        <p className="text">
+          DARAT is a saudi-based corporation dedicated to the Saudi 2030 vision, offering various integrated solutions that encompass top-tier services and high end products.
+        </p>
+        <div className="logo-section">
+          <h1 className="logo">
+            <img style={{width:'50%'}} src={logo} alt="" />
+          </h1>
+          <div className="flex social-media space-x-4">
+        <a href="#instagram" className="text-white text-xl"><FaInstagram /></a>
+        <a href="#instagram" className="text-white text-xl"><FaTiktok /></a>
+        <a href="#linkedin" className="text-white text-xl"><FaLinkedinIn /></a>
+      </div>
+        </div>
+      </div>
+    </div>
+    </>
+
   );
-}
+};
+
+export default Electromachanical;
