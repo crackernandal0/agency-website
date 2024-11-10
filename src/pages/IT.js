@@ -53,12 +53,6 @@ import telecom5 from "../assets/images/telecom5.png";
 import telecom6 from "../assets/images/telecom6.png";
 import droneImage from "../assets/images/drones1.png";
 import drone from "../assets/images/drone.png";
-import Graident from "../assets/home/HOME.png";
-
-import { FaInstagram } from "react-icons/fa6";
-import { FaTiktok } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa6";
-import logo from "../assets/images/logo (2).png";
 
 // import 'slick-carousel/slick/slick-theme.css';
 
