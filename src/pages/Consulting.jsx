@@ -11,12 +11,12 @@ import apex from "../assets/images/apex.png";
 import apex2 from "../assets/images/apex2.png";
 import group from "../assets/images/Group 145.png";
 // import group2 from '../assets/images/Group 146.png'
-import tacle1 from "../assets/home/setting.png";
+import tacle1 from "../assets/home/infosetting.png";
 import tackle2 from "../assets/home/avtar.png";
 import tackle1 from "../assets/home/cost.png";
-import process3 from "../assets/home/search.png";
-import process2 from "../assets/home/setting.png";
-import process1 from "../assets/home/idea.png";
+import process3 from "../assets/home/seraching.png";
+import process1 from "../assets/home/setting.png";
+import process2 from "../assets/home/idea.png";
 import process4 from "../assets/home/board.png";
 import digital1 from "../assets/images/digital1.png";
 import digital6 from "../assets/images/digital6.png";
